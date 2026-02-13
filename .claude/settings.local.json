@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app:*)",
+      "Bash(npm:*)",
+      "Bash(node --version:*)",
+      "Bash(dir:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(\"/c/Program Files/nodejs/npm\" --version)",
+      "Bash(node -e:*)",
+      "Bash(npm.cmd:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"$file\")",
+      "Bash(done)",
+      "Bash(npx next build)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next:*)",
+      "Bash(timeout:*)",
+      "Bash(move:*)",
+      "WebFetch(domain:www.goboony.fr)",
+      "Bash(node:*)"
+    ]
+  }
+}
