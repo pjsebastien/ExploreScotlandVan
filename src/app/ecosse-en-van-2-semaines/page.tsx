@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Écosse en Van 2 Semaines - Le Grand Tour',
   description: 'Itineraire de 2 semaines en van en Écosse : North Coast 500, Skye, Highlands et plus encore. Jour par jour avec conseils pratiques.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/ecosse-en-van-2-semaines/',
+    canonical: 'https://www.explorescotlandvan.com/ecosse-en-van-2-semaines/',
   },
   openGraph: {
     title: 'Écosse en Van 2 Semaines - Le Grand Tour',
     description: 'Itineraire de 2 semaines en van en Écosse : NC500, Skye, Highlands. Jour par jour.',
-    url: 'https://explorescotlandvan.com/ecosse-en-van-2-semaines/',
+    url: 'https://www.explorescotlandvan.com/ecosse-en-van-2-semaines/',
     images: [{ url: '/images/north-coast-500.jpg' }],
   },
 };
@@ -45,7 +45,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Écosse en Van 2 Semaines',
   description: 'Itineraire de 2 semaines en van en Écosse avec la North Coast 500 et plus.',
-  image: 'https://explorescotlandvan.com/images/north-coast-500.jpg',
+  image: 'https://www.explorescotlandvan.com/images/north-coast-500.jpg',
   author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
   publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
 };

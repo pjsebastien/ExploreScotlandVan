@@ -8,7 +8,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://explorescotlandvan.com'),
+  metadataBase: new URL('https://www.explorescotlandvan.com'),
   title: {
     default: "Location Van Écosse | ExploreScotlandVan",
     template: "%s | ExploreScotlandVan",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://explorescotlandvan.com",
+    url: "https://www.explorescotlandvan.com",
     siteName: "ExploreScotlandVan",
     title: "Location Van Ecosse | ExploreScotlandVan",
     description: "Location de van amenage en Écosse. Comparez les offres, planifiez votre road trip dans les Highlands et decouvrez les meilleurs itineraires.",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://explorescotlandvan.com",
+    canonical: "https://www.explorescotlandvan.com",
   },
 };
 

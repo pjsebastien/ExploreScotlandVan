@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Road Trip Écosse en Van - Itineraires et Conseils',
   description: 'Planifiez votre road trip en van en Écosse : itineraires detailles, etapes incontournables, conseils pratiques et astuces pour une aventure reussie.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/road-trip-ecosse-van/',
+    canonical: 'https://www.explorescotlandvan.com/road-trip-ecosse-van/',
   },
   openGraph: {
     title: 'Road Trip Écosse en Van - Itineraires et Conseils',
     description: 'Planifiez votre road trip en van en Écosse : itineraires detailles, etapes incontournables, conseils pratiques.',
-    url: 'https://explorescotlandvan.com/road-trip-ecosse-van/',
+    url: 'https://www.explorescotlandvan.com/road-trip-ecosse-van/',
     images: [{ url: '/images/route-highlands.jpg' }],
   },
 };
@@ -45,7 +45,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Road Trip Écosse en Van',
   description: 'Planifiez votre road trip en van en Écosse avec nos itineraires detailles et conseils pratiques.',
-  image: 'https://explorescotlandvan.com/images/route-highlands.jpg',
+  image: 'https://www.explorescotlandvan.com/images/route-highlands.jpg',
   author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
   publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
 };

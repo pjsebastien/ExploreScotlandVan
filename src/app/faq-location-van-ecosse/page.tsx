@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'FAQ Location Van Écosse - Toutes vos Questions',
   description: 'Reponses a toutes vos questions sur la location de van en Écosse : permis, assurance, bivouac, meteo, budget et conseils pratiques.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/faq-location-van-ecosse/',
+    canonical: 'https://www.explorescotlandvan.com/faq-location-van-ecosse/',
   },
   openGraph: {
     title: 'FAQ Location Van Écosse - Toutes vos Questions',
     description: 'Reponses a toutes vos questions sur la location de van en Écosse : permis, assurance, bivouac et plus.',
-    url: 'https://explorescotlandvan.com/faq-location-van-ecosse/',
+    url: 'https://www.explorescotlandvan.com/faq-location-van-ecosse/',
   },
 };
 

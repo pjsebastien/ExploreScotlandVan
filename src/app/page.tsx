@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: 'Location Van Écosse - Comparez et Reservez',
   description: 'Location de van en Écosse : comparez les offres, decouvrez les meilleurs itineraires et conseils pour votre road trip dans les Highlands ecossais.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/',
+    canonical: 'https://www.explorescotlandvan.com/',
   },
   openGraph: {
     title: 'Location Van Écosse - Comparez et Reservez',
     description: 'Location de van en Écosse : comparez les offres, decouvrez les meilleurs itineraires et conseils pour votre road trip dans les Highlands ecossais.',
-    url: 'https://explorescotlandvan.com/',
+    url: 'https://www.explorescotlandvan.com/',
   },
 };
 
@@ -96,7 +96,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Location Van Écosse',
   description: 'Tout savoir sur la location de van en Écosse : conseils, itineraires, prix et astuces pour reussir votre road trip dans les Highlands.',
-  image: 'https://explorescotlandvan.com/images/hero-highlands.jpg',
+  image: 'https://www.explorescotlandvan.com/images/hero-highlands.jpg',
   author: {
     '@type': 'Organization',
     name: 'ExploreScotlandVan',
@@ -106,7 +106,7 @@ const articleSchema = {
     name: 'ExploreScotlandVan',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://explorescotlandvan.com/images/hero-highlands.jpg',
+      url: 'https://www.explorescotlandvan.com/images/hero-highlands.jpg',
     },
   },
 };

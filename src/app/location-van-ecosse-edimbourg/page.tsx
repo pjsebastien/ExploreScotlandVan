@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Location Van Écosse Edimbourg - Loueurs et Conseils',
   description: 'Louez un van a Edimbourg pour votre road trip en Écosse. Comparatif des loueurs, conseils pratiques et itineraires au depart de la capitale.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/location-van-ecosse-edimbourg/',
+    canonical: 'https://www.explorescotlandvan.com/location-van-ecosse-edimbourg/',
   },
   openGraph: {
     title: 'Location Van Écosse Edimbourg - Loueurs et Conseils',
     description: 'Louez un van a Edimbourg pour votre road trip en Écosse. Comparatif et conseils.',
-    url: 'https://explorescotlandvan.com/location-van-ecosse-edimbourg/',
+    url: 'https://www.explorescotlandvan.com/location-van-ecosse-edimbourg/',
     images: [{ url: '/images/van-nature.jpg' }],
   },
 };
@@ -49,7 +49,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Location Van Écosse Edimbourg',
   description: 'Tout savoir pour louer un van a Edimbourg et partir en road trip en Écosse.',
-  image: 'https://explorescotlandvan.com/images/van-nature.jpg',
+  image: 'https://www.explorescotlandvan.com/images/van-nature.jpg',
   author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
   publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
 };

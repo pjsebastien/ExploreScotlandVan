@@ -18,7 +18,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.href ? `https://explorescotlandvan.com${item.href}` : undefined,
+      item: item.href ? `https://www.explorescotlandvan.com${item.href}` : undefined,
     })),
   };
 

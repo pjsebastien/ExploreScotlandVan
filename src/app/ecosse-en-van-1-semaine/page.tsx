@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Écosse en Van 1 Semaine - Itineraire Jour par Jour',
   description: 'Itineraire detaille pour decouvrir l\'Écosse en van en 1 semaine : jour par jour, etapes, distances et conseils pour un road trip reussi.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/ecosse-en-van-1-semaine/',
+    canonical: 'https://www.explorescotlandvan.com/ecosse-en-van-1-semaine/',
   },
   openGraph: {
     title: 'Écosse en Van 1 Semaine - Itineraire Jour par Jour',
     description: 'Itineraire detaille pour decouvrir l\'Écosse en van en 1 semaine : jour par jour, etapes et conseils.',
-    url: 'https://explorescotlandvan.com/ecosse-en-van-1-semaine/',
+    url: 'https://www.explorescotlandvan.com/ecosse-en-van-1-semaine/',
     images: [{ url: '/images/roadtrip-panoramique.jpg' }],
   },
 };
@@ -45,7 +45,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Écosse en Van 1 Semaine',
   description: 'Itineraire detaille pour decouvrir l\'Écosse en van en une semaine.',
-  image: 'https://explorescotlandvan.com/images/roadtrip-panoramique.jpg',
+  image: 'https://www.explorescotlandvan.com/images/roadtrip-panoramique.jpg',
   author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
   publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
 };

@@ -18,7 +18,8 @@
       "Bash(timeout:*)",
       "Bash(move:*)",
       "WebFetch(domain:www.goboony.fr)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(xargs sed:*)"
     ]
   }
 }

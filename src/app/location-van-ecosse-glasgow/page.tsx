@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Location Van Écosse Glasgow - Loueurs et Conseils',
   description: 'Louez un van a Glasgow pour votre road trip en Écosse. Acces direct a la cote Ouest, Skye et la NC500. Conseils pratiques et itineraires.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/location-van-ecosse-glasgow/',
+    canonical: 'https://www.explorescotlandvan.com/location-van-ecosse-glasgow/',
   },
   openGraph: {
     title: 'Location Van Écosse Glasgow - Loueurs et Conseils',
     description: 'Louez un van a Glasgow pour votre road trip en Écosse. Acces direct a la cote Ouest et Skye.',
-    url: 'https://explorescotlandvan.com/location-van-ecosse-glasgow/',
+    url: 'https://www.explorescotlandvan.com/location-van-ecosse-glasgow/',
     images: [{ url: '/images/roadtrip-mer-montagne.jpg' }],
   },
 };
@@ -45,7 +45,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Location Van Écosse Glasgow',
   description: 'Tout savoir pour louer un van a Glasgow et partir en road trip sur la cote Ouest ecossaise.',
-  image: 'https://explorescotlandvan.com/images/roadtrip-mer-montagne.jpg',
+  image: 'https://www.explorescotlandvan.com/images/roadtrip-mer-montagne.jpg',
   author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
   publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
 };

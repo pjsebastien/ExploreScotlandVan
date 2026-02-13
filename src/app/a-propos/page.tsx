@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'A Propos',
   description: 'Decouvrez ExploreScotlandVan.com, votre ressource pour la location de van et le road trip en Écosse.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/a-propos/',
+    canonical: 'https://www.explorescotlandvan.com/a-propos/',
   },
 };
 

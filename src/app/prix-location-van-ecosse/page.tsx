@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Prix Location Van Écosse - Tarifs et Budget',
   description: 'Decouvrez les prix de location de van en Écosse : tarifs par saison, types de vehicules, couts annexes et conseils pour optimiser votre budget.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/prix-location-van-ecosse/',
+    canonical: 'https://www.explorescotlandvan.com/prix-location-van-ecosse/',
   },
   openGraph: {
     title: 'Prix Location Van Écosse - Tarifs et Budget',
     description: 'Decouvrez les prix de location de van en Écosse : tarifs par saison, types de vehicules et conseils budget.',
-    url: 'https://explorescotlandvan.com/prix-location-van-ecosse/',
+    url: 'https://www.explorescotlandvan.com/prix-location-van-ecosse/',
     images: [{ url: '/images/van-montagnes.jpg' }],
   },
 };
@@ -49,7 +49,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Prix Location Van Écosse',
   description: 'Tout savoir sur les prix de location de van en Écosse avec tarifs par saison et conseils budget.',
-  image: 'https://explorescotlandvan.com/images/van-montagnes.jpg',
+  image: 'https://www.explorescotlandvan.com/images/van-montagnes.jpg',
   author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
   publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
 };

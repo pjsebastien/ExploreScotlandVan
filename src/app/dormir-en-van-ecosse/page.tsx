@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Dormir en Van en Écosse - Bivouac et Camping',
   description: 'Ou dormir en van en Ecosse ? Reglementation, meilleurs spots, camping sauvage et conseils pratiques pour vos nuits.',
   alternates: {
-    canonical: 'https://explorescotlandvan.com/dormir-en-van-ecosse/',
+    canonical: 'https://www.explorescotlandvan.com/dormir-en-van-ecosse/',
   },
   openGraph: {
     title: 'Dormir en Van en Écosse - Bivouac et Camping',
     description: 'Ou dormir en van en Ecosse ? Reglementation, meilleurs spots et conseils.',
-    url: 'https://explorescotlandvan.com/dormir-en-van-ecosse/',
+    url: 'https://www.explorescotlandvan.com/dormir-en-van-ecosse/',
     images: [{ url: '/images/dormir-van-lac.jpg' }],
   },
 };
@@ -48,7 +48,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Dormir en Van en Écosse',
   description: 'Tout savoir pour dormir en van en Ecosse : reglementation, spots et conseils pratiques.',
-  image: 'https://explorescotlandvan.com/images/dormir-van-lac.jpg',
+  image: 'https://www.explorescotlandvan.com/images/dormir-van-lac.jpg',
   author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
   publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
 };
