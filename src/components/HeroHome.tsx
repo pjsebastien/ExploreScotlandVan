@@ -51,7 +51,7 @@ export default function HeroHome() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content Column */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-forest-700/50 backdrop-blur-sm text-forest-100 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-forest-600/30">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -112,7 +112,7 @@ export default function HeroHome() {
           </div>
 
           {/* Image Gallery Column */}
-          <div className="order-1 lg:order-2 relative">
+          <div className="order-2 relative">
             <div className="grid grid-cols-12 gap-4">
               {/* Main large image */}
               <div className="col-span-7 relative">
