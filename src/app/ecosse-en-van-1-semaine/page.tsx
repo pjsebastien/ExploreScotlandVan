@@ -1,24 +1,12 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
 import HeroPage from '@/components/HeroPage';
-
-export const metadata: Metadata = {
-  title: 'Écosse en van 1 semaine : l\'itinéraire essentiel',
-  description: 'Découvrez l\'Écosse en van en 7 jours : Édimbourg, Skye, Glen Coe. Itinéraire jour par jour, spots et budget pour une semaine parfaite.',
-  alternates: {
-    canonical: 'https://www.explorescotlandvan.com/ecosse-en-van-1-semaine/',
-  },
-  openGraph: {
-    title: 'Écosse en van 1 semaine : l\'itinéraire essentiel',
-    description: 'Découvrez l\'Écosse en van en 7 jours : Édimbourg, Skye, Glen Coe. Itinéraire jour par jour.',
-    url: 'https://www.explorescotlandvan.com/ecosse-en-van-1-semaine/',
-    images: [{ url: '/images/roadtrip-panoramique.jpg' }],
-  },
-};
+import ItineraryOverview from '@/components/ItineraryOverview';
 
 const breadcrumbItems = [
   { name: 'Accueil', href: '/' },
@@ -41,22 +29,233 @@ const faqItems = [
   },
 ];
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Écosse en Van 1 Semaine',
-  description: 'Itineraire detaille pour decouvrir l\'Écosse en van en une semaine.',
-  image: 'https://www.explorescotlandvan.com/images/roadtrip-panoramique.jpg',
-  author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
-  publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
-};
+const overviewItems = [
+  { icon: 'route' as const, label: 'Distance', value: '850 km' },
+  { icon: 'location' as const, label: 'Départ/Arrivée', value: 'Édimbourg' },
+  { icon: 'star' as const, label: 'Points forts', value: 'Skye, Glen Coe' },
+  { icon: 'euro' as const, label: 'Budget moyen', value: '1500€' },
+];
+
+const itineraryDays = [
+  {
+    dayNumber: 1,
+    title: 'Édimbourg → Glen Coe',
+    subtitle: 'La vallée glaciaire légendaire',
+    distance: '170 km',
+    duration: '3h',
+    description: 'Récupérez votre van à Édimbourg le matin et familiarisez-vous avec le véhicule. Direction l\'ouest par la M9 puis l\'A84 à travers les Trossachs. Arrivée à Glen Coe en fin d\'après-midi dans l\'une des vallées les plus dramatiques d\'Écosse.',
+    highlights: ['Traversée des Trossachs', 'Glen Coe Visitor Center', 'Massacre de 1692', 'Randonnées accessibles'],
+    sleepSpot: 'Parking du visitor center ou bivouac dans la vallée',
+  },
+  {
+    dayNumber: 2,
+    title: 'Glen Coe → Île de Skye',
+    subtitle: 'La route vers les îles',
+    distance: '130 km',
+    duration: '2h30',
+    description: 'Matinée à Glen Coe si vous n\'avez pas eu le temps d\'explorer. Puis direction Fort William et la "Road to the Isles" (A830), l\'une des plus belles routes d\'Écosse. Passage par le célèbre Glenfinnan Viaduct.',
+    highlights: ['Road to the Isles', 'Glenfinnan Viaduct (Harry Potter)', 'Fort William', 'Pont de Skye'],
+    sleepSpot: 'Camping près de Portree ou spot autorisé dans le sud de l\'île',
+  },
+  {
+    dayNumber: 3,
+    title: 'Île de Skye - Nord',
+    subtitle: 'Paysages lunaires et falaises',
+    distance: '80 km',
+    duration: 'Journée complète',
+    description: 'Journée dédiée à l\'exploration du nord de Skye. Réveillez-vous tôt pour éviter la foule sur les sites populaires. Le Quiraing offre une randonnée inoubliable dans un paysage surréaliste.',
+    highlights: ['The Quiraing (rando 2h)', 'Old Man of Storr (rando 1h30)', 'Kilt Rock', 'Portree et son port coloré'],
+    sleepSpot: 'Même emplacement que la veille ou changement de spot',
+  },
+  {
+    dayNumber: 4,
+    title: 'Skye Sud → Loch Ness',
+    subtitle: 'Des Fairy Pools au monstre légendaire',
+    distance: '140 km',
+    duration: '3h',
+    description: 'Matinée dans le sud de Skye avec les Fairy Pools et Talisker Distillery. Puis départ vers le Loch Ness par l\'A87, route spectaculaire le long du Loch Cluanie.',
+    highlights: ['Fairy Pools (rando 1h)', 'Talisker Distillery', 'Loch Cluanie', 'Château d\'Urquhart'],
+    sleepSpot: 'Aire le long du Loch Ness ou camping à Drumnadrochit',
+  },
+  {
+    dayNumber: 5,
+    title: 'Loch Ness → Cairngorms',
+    subtitle: 'La montagne et ses secrets',
+    distance: '100 km',
+    duration: '2h',
+    description: 'Matinée le long du Loch Ness puis arrêt à Inverness, capitale des Highlands. L\'après-midi, direction le parc national des Cairngorms avec ses paysages alpins et sa faune unique.',
+    highlights: ['Inverness (provisions)', 'Parc des Cairngorms', 'Faune sauvage', 'Aviemore'],
+    sleepSpot: 'Spots de bivouac dans le parc ou camping à Aviemore',
+  },
+  {
+    dayNumber: 6,
+    title: 'Cairngorms → Pitlochry',
+    subtitle: 'Whisky et charme victorien',
+    distance: '120 km',
+    duration: '2h30',
+    description: 'Dernière matinée dans les Cairngorms avec possibilité de randonnée ou visite d\'une distillerie. Route vers le sud et arrêt à Pitlochry, charmante ville victorienne.',
+    highlights: ['Distilleries du Speyside', 'Pitlochry', 'Échelle à saumons', 'Théâtre de Pitlochry'],
+    sleepSpot: 'Camping ou aire près de Perth',
+  },
+  {
+    dayNumber: 7,
+    title: 'Retour à Édimbourg',
+    subtitle: 'Fin de l\'aventure',
+    distance: '70 km',
+    duration: '1h',
+    description: 'Retour tranquille vers Édimbourg. Prévoyez d\'arriver 2h avant l\'heure de restitution pour faire le plein, ranger et nettoyer le van. Arrêt possible au château de Stirling.',
+    highlights: ['Château de Stirling (optionnel)', 'Restitution du van', 'Temps pour le nettoyage'],
+    sleepSpot: '',
+  },
+];
+
+interface ItineraryDay {
+  dayNumber: number;
+  title: string;
+  subtitle: string;
+  distance: string;
+  duration: string;
+  description: string;
+  highlights: string[];
+  sleepSpot: string;
+}
+
+interface DayCardProps {
+  day: ItineraryDay;
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+function DayCard({ day, isExpanded, onToggle }: DayCardProps) {
+  return (
+    <div>
+      <div
+        className={`bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden transition-all duration-300 ${
+          isExpanded ? 'ring-2 ring-forest-400 shadow-lg' : 'hover:shadow-md hover:border-forest-200'
+        }`}
+      >
+        {/* Header - Always visible */}
+        <button
+          onClick={onToggle}
+          className="w-full text-left p-4 md:p-6 flex items-start gap-4"
+        >
+          {/* Day number badge */}
+          <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-forest-600 to-forest-700 rounded-xl flex items-center justify-center shadow-md">
+            <span className="text-white font-bold text-lg">J{day.dayNumber}</span>
+          </div>
+
+          <div className="flex-grow min-w-0">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h3 className="text-lg font-bold text-forest-900">{day.title}</h3>
+                <p className="text-sm text-forest-600">{day.subtitle}</p>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-stone-500 flex-shrink-0">
+                <span className="hidden sm:flex items-center gap-1">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                  </svg>
+                  {day.distance}
+                </span>
+                <span className="hidden sm:flex items-center gap-1">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {day.duration}
+                </span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Mobile stats */}
+            <div className="flex items-center gap-3 mt-2 text-sm text-stone-500 sm:hidden">
+              <span className="flex items-center gap-1">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                </svg>
+                {day.distance}
+              </span>
+              <span className="flex items-center gap-1">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {day.duration}
+              </span>
+            </div>
+          </div>
+        </button>
+
+        {/* Expanded content */}
+        {isExpanded && (
+          <div className="px-4 md:px-6 pb-6 border-t border-stone-100 pt-6">
+            <p className="text-stone-600 mb-4">{day.description}</p>
+
+            {/* Highlights */}
+            <div className="mb-4">
+              <h4 className="text-sm font-semibold text-forest-800 mb-2 flex items-center gap-2">
+                <svg className="w-4 h-4 text-forest-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+                Points forts
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {day.highlights.map((highlight, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-forest-50 text-forest-700 text-sm rounded-full"
+                  >
+                    {highlight}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Sleep spot */}
+            {day.sleepSpot && (
+              <div className="p-3 bg-sand-50 rounded-lg">
+                <p className="text-sm">
+                  <span className="font-semibold text-forest-800">Où dormir : </span>
+                  <span className="text-stone-600">{day.sleepSpot}</span>
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function UneSemainePage() {
+  const [expandedDay, setExpandedDay] = useState<number | null>(1);
+
+  const toggleDay = (dayNumber: number) => {
+    setExpandedDay(expandedDay === dayNumber ? null : dayNumber);
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Écosse en Van 1 Semaine',
+            description: 'Itineraire detaille pour decouvrir l\'Écosse en van en une semaine.',
+            image: 'https://www.explorescotlandvan.com/images/roadtrip-panoramique.jpg',
+            author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
+            publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
+          }),
+        }}
       />
 
       <HeroPage
@@ -78,235 +277,129 @@ export default function UneSemainePage() {
       </div>
 
       <article className="container-narrow section-padding">
-        <div className="prose-custom">
-          <p className="text-xl text-stone-600 mb-8">
+        {/* Intro */}
+        <div className="prose-custom mb-12">
+          <p className="text-xl text-stone-600">
             Une semaine en van en Écosse : c&apos;est court mais suffisant pour tomber amoureux
             du pays. Cet itineraire optimise vous fait decouvrir les incontournables des Highlands
             sans vous epuiser. Au programme : paysages grandioses, lochs mysterieux et villages
             de caractere.
           </p>
+        </div>
 
-          <div className="bg-forest-50 rounded-xl p-6 my-8">
-            <h3 className="text-lg font-semibold text-forest-800 mb-2">Resume de l&apos;itineraire</h3>
-            <ul className="space-y-1 text-stone-700">
-              <li><strong>Distance totale :</strong> environ 850 km</li>
-              <li><strong>Depart/Arrivee :</strong> Edimbourg</li>
-              <li><strong>Points forts :</strong> Glen Coe, Ile de Skye, Loch Ness, Cairngorms</li>
-              <li><strong>Budget estime :</strong> 1200-1800€ pour 2 personnes (van + depenses)</li>
-            </ul>
+        {/* Overview */}
+        <ItineraryOverview items={overviewItems} />
+
+        {/* Interactive Itinerary */}
+        <div className="my-12">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-forest-900">Itinéraire jour par jour</h2>
+            <button
+              onClick={() => setExpandedDay(expandedDay ? null : 1)}
+              className="text-sm text-forest-600 hover:text-forest-800 font-medium"
+            >
+              {expandedDay ? 'Tout réduire' : 'Tout déplier'}
+            </button>
           </div>
 
-          <h2>Jour 1 : Edimbourg - Glen Coe</h2>
-          <p><strong>Distance :</strong> 170 km | <strong>Duree :</strong> 3h de route</p>
-
-          <p>
-            Recuperez votre van a <Link href="/location-van-ecosse-edimbourg/">Edimbourg</Link> le matin.
-            Prenez le temps de vous familiariser avec le vehicule avant de partir. Direction
-            l&apos;ouest par la M9 puis l&apos;A84 a travers les Trossachs.
-          </p>
-
-          <p>
-            Arrivee a <strong>Glen Coe</strong> en fin d&apos;apres-midi. Cette vallee glaciaire est
-            l&apos;un des paysages les plus dramatiques d&apos;Ecosse. Arretez-vous au visitor center
-            pour comprendre l&apos;histoire tragique du massacre de 1692. Les randonneurs apprecieront
-            les nombreux sentiers accessibles.
-          </p>
-
-          <p><strong>Ou dormir :</strong> Parking du visitor center (tolere) ou bivouac dans la vallee.</p>
-
-          <h2>Jour 2 : Glen Coe - Ile de Skye</h2>
-          <p><strong>Distance :</strong> 130 km | <strong>Duree :</strong> 2h30 de route</p>
-
-          <p>
-            Matinee a Glen Coe si vous n&apos;avez pas eu le temps d&apos;explorer la veille. Puis direction
-            Fort William et la "Road to the Isles" (A830), l&apos;une des plus belles routes d&apos;Ecosse.
-          </p>
-
-          <p>
-            Passage par le <strong>Glenfinnan Viaduct</strong> (le pont d&apos;Harry Potter). Si vous
-            etes la vers 10h30 ou 15h, vous pourrez voir le train a vapeur le traverser.
-          </p>
-
-          <p>
-            Traversee vers Skye par le pont de Kyle of Lochalsh. Installation sur l&apos;ile pour
-            les deux prochaines nuits.
-          </p>
-
-          <p><strong>Ou dormir :</strong> Camping pres de Portree ou spot autorise dans le sud de l&apos;ile.</p>
-
-          <div className="my-12">
-            <Image
-              src="/images/highlands-adventure.jpg"
-              alt="Aventure en van sur les routes des Highlands vers Skye"
-              width={1200}
-              height={600}
-              className="rounded-xl shadow-lg w-full h-auto"
-            />
-            <p className="text-sm text-stone-500 mt-2 text-center">
-              La route vers Skye offre des panoramas exceptionnels
-            </p>
+          <div className="space-y-4">
+            {itineraryDays.map((day) => (
+              <DayCard
+                key={day.dayNumber}
+                day={day}
+                isExpanded={expandedDay === day.dayNumber}
+                onToggle={() => toggleDay(day.dayNumber)}
+              />
+            ))}
           </div>
-
-          <h2>Jour 3 : Ile de Skye - Nord</h2>
-          <p><strong>Distance :</strong> 80 km | <strong>Duree :</strong> journee complete sur place</p>
-
-          <p>
-            Journee dediee a l&apos;exploration du nord de Skye. Reveillez-vous tot pour eviter
-            la foule sur les sites populaires.
-          </p>
-
-          <p><strong>Programme suggere :</strong></p>
-          <ul>
-            <li>Matin : <strong>The Quiraing</strong> - randonnee de 2h dans un paysage lunaire</li>
-            <li>Midi : Pique-nique avec vue</li>
-            <li>Apres-midi : <strong>Old Man of Storr</strong> - randonnee de 1h30</li>
-            <li>Soir : <strong>Portree</strong> pour le diner et les maisons colorees du port</li>
-          </ul>
-
-          <p><strong>Ou dormir :</strong> Meme emplacement que la veille ou changement de spot.</p>
-
-          <h2>Jour 4 : Ile de Skye - Sud puis Loch Ness</h2>
-          <p><strong>Distance :</strong> 140 km | <strong>Duree :</strong> 3h de route</p>
-
-          <p>
-            Matinee dans le sud de Skye avant de quitter l&apos;ile :
-          </p>
-
-          <ul>
-            <li><strong>Fairy Pools</strong> : Piscines naturelles aux eaux turquoise (randonnee 1h)</li>
-            <li><strong>Talisker Distillery</strong> : Pour les amateurs de whisky</li>
-          </ul>
-
-          <p>
-            Depart vers le Loch Ness par l&apos;A87. Route spectaculaire le long du Loch Cluanie.
-            Arrivee au <strong>Loch Ness</strong> en fin de journee.
-          </p>
-
-          <p>
-            Visitez les ruines du <strong>chateau d&apos;Urquhart</strong> si vous arrivez avant la
-            fermeture (vue magnifique sur le loch).
-          </p>
-
-          <p><strong>Ou dormir :</strong> Aire le long du Loch Ness ou camping a Drumnadrochit.</p>
-
-          <h2>Jour 5 : Loch Ness - Inverness - Cairngorms</h2>
-          <p><strong>Distance :</strong> 100 km | <strong>Duree :</strong> 2h de route</p>
-
-          <p>
-            Matinee le long du Loch Ness. Arret a <strong>Inverness</strong>, capitale des Highlands,
-            pour faire le plein de provisions et decouvrir la ville (chateau, vieille ville).
-          </p>
-
-          <p>
-            Apres-midi : direction le <strong>parc national des Cairngorms</strong>. Ces montagnes
-            abritent une faune unique (cerfs, aigles, ecureuils roux) et offrent des paysages
-            alpins saisissants.
-          </p>
-
-          <p>
-            Arret possible a <strong>Aviemore</strong> pour une randonnee ou simplement profiter
-            de l&apos;ambiance montagnarde.
-          </p>
-
-          <p><strong>Ou dormir :</strong> Nombreux spots de bivouac dans le parc ou camping a Aviemore.</p>
-
-          <h2>Jour 6 : Cairngorms - Pitlochry - Perth</h2>
-          <p><strong>Distance :</strong> 120 km | <strong>Duree :</strong> 2h30 de route</p>
-
-          <p>
-            Derniere matinee dans les Cairngorms. Possibilite de randonnee matinale ou visite
-            d&apos;une distillerie (nombreuses dans la region du Speyside).
-          </p>
-
-          <p>
-            Route vers le sud avec arret a <strong>Pitlochry</strong>, charmante ville victorienne.
-            Ne manquez pas :
-          </p>
-
-          <ul>
-            <li>L&apos;echelle a saumons (salmon ladder)</li>
-            <li>Le theatre de Pitlochry</li>
-            <li>Les nombreuses distilleries alentour</li>
-          </ul>
-
-          <p>
-            Continuation vers <strong>Perth</strong> ou ses environs pour la derniere nuit.
-          </p>
-
-          <p><strong>Ou dormir :</strong> Camping ou aire pres de Perth pour etre proche d&apos;Edimbourg le lendemain.</p>
-
-          <h2>Jour 7 : Retour Edimbourg</h2>
-          <p><strong>Distance :</strong> 70 km | <strong>Duree :</strong> 1h de route</p>
-
-          <p>
-            Retour tranquille vers Edimbourg. Prevoyez d&apos;arriver 2h avant l&apos;heure de restitution
-            pour faire le plein, ranger et nettoyer le van.
-          </p>
-
-          <p>
-            Si vous avez du temps, arret possible au <strong>chateau de Stirling</strong> sur le chemin.
-          </p>
         </div>
 
         <AffiliateCTA
           variant="hero"
-          title="Reservez votre van pour cette aventure"
-          description="Comparez les offres de location a Edimbourg et partez a la decouverte de l&apos;Ecosse."
+          title="Réservez votre van pour cette aventure"
+          description="Comparez les offres de location à Édimbourg et partez à la découverte de l'Écosse."
         />
 
-        <div className="prose-custom">
+        {/* Tips section */}
+        <div className="prose-custom my-12">
           <h2>Conseils pour optimiser votre semaine</h2>
 
-          <h3>Partez tot le matin</h3>
-          <p>
-            Les sites populaires (Quiraing, Fairy Pools, Glen Coe) sont pris d&apos;assaut des 10h
-            en saison. Etre sur place a l&apos;ouverture vous garantit tranquillite et meilleures lumieres.
-          </p>
+          <div className="grid md:grid-cols-2 gap-4 my-8">
+            <div className="p-5 bg-forest-50 rounded-xl">
+              <h4 className="font-semibold text-forest-800 mb-2 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                </svg>
+                Partez tôt le matin
+              </h4>
+              <p className="text-stone-600 text-sm">
+                Les sites populaires sont pris d&apos;assaut dès 10h en saison. Être sur place à l&apos;ouverture garantit tranquillité et meilleures lumières.
+              </p>
+            </div>
 
-          <h3>Restez flexible</h3>
-          <p>
-            La meteo ecossaise est imprevisible. Si un jour est particulierement beau, adaptez
-            votre programme pour profiter des activites exterieures.
-          </p>
+            <div className="p-5 bg-forest-50 rounded-xl">
+              <h4 className="font-semibold text-forest-800 mb-2 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+                </svg>
+                Restez flexible
+              </h4>
+              <p className="text-stone-600 text-sm">
+                La météo écossaise est imprévisible. Si un jour est beau, adaptez votre programme pour profiter des activités extérieures.
+              </p>
+            </div>
 
-          <h3>Ne sous-estimez pas les distances</h3>
-          <p>
-            Les routes sont sinueuses et souvent limitees a 60 km/h. Ajoutez 30% au temps
-            indique par le GPS.
-          </p>
+            <div className="p-5 bg-forest-50 rounded-xl">
+              <h4 className="font-semibold text-forest-800 mb-2 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Anticipez les distances
+              </h4>
+              <p className="text-stone-600 text-sm">
+                Les routes sont sinueuses et souvent limitées à 60 km/h. Ajoutez 30% au temps indiqué par le GPS.
+              </p>
+            </div>
 
-          <h3>Preparez vos provisions</h3>
-          <p>
-            Les commerces sont rares dans les Highlands. Faites vos courses a Edimbourg,
-            Fort William ou Inverness.
-          </p>
+            <div className="p-5 bg-forest-50 rounded-xl">
+              <h4 className="font-semibold text-forest-800 mb-2 flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+                Préparez vos provisions
+              </h4>
+              <p className="text-stone-600 text-sm">
+                Les commerces sont rares dans les Highlands. Faites vos courses à Édimbourg, Fort William ou Inverness.
+              </p>
+            </div>
+          </div>
 
           <h2>Variantes possibles</h2>
 
           <div className="grid md:grid-cols-2 gap-6 my-8">
-            <div className="p-6 bg-sand-50 rounded-xl">
-              <h4 className="font-semibold text-forest-800 mb-2">Option "Plus de Skye"</h4>
+            <div className="p-6 bg-sand-50 rounded-xl border border-sand-200">
+              <h4 className="font-semibold text-forest-800 mb-2">Option &quot;Plus de Skye&quot;</h4>
               <p className="text-stone-600 text-sm">
-                Passez 3 nuits sur Skye au lieu de 2 en reduisant le temps dans les Cairngorms.
-                Ideal si vous etes photographe ou randonneur.
+                Passez 3 nuits sur Skye au lieu de 2 en réduisant le temps dans les Cairngorms.
+                Idéal si vous êtes photographe ou randonneur.
               </p>
             </div>
-            <div className="p-6 bg-sand-50 rounded-xl">
-              <h4 className="font-semibold text-forest-800 mb-2">Option "Depart Glasgow"</h4>
+            <div className="p-6 bg-sand-50 rounded-xl border border-sand-200">
+              <h4 className="font-semibold text-forest-800 mb-2">Option &quot;Départ Glasgow&quot;</h4>
               <p className="text-stone-600 text-sm">
                 <Link href="/location-van-ecosse-glasgow/" className="text-forest-700 underline">Partez de Glasgow</Link> pour
-                acceder plus rapidement a la cote ouest et Skye.
+                accéder plus rapidement à la côte ouest et Skye.
               </p>
             </div>
           </div>
 
           <p>
-            Envie de plus de temps ? Decouvrez notre <Link href="/ecosse-en-van-2-semaines/">itineraire
-            de 2 semaines</Link> pour une exploration complete.
+            Envie de plus de temps ? Découvrez notre <Link href="/ecosse-en-van-2-semaines/">itinéraire
+            de 2 semaines</Link> pour une exploration complète incluant la North Coast 500.
           </p>
         </div>
 
-        <FAQ items={faqItems} title="Questions sur cet itineraire" />
+        <FAQ items={faqItems} title="Questions sur cet itinéraire" />
       </article>
     </>
   );
