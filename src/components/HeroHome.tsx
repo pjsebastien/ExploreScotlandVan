@@ -63,7 +63,7 @@ export default function HeroHome() {
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-6">
-              Louez un van amenage en{' '}
+              Louez votre van en{' '}
               <span className="text-forest-300">Écosse</span>
             </h1>
 

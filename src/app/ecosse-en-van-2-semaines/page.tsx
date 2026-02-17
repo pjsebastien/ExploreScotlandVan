@@ -7,14 +7,14 @@ import FAQ from '@/components/FAQ';
 import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
-  title: 'Écosse en Van 2 Semaines - Le Grand Tour',
-  description: 'Itineraire de 2 semaines en van en Écosse : North Coast 500, Skye, Highlands et plus encore. Jour par jour avec conseils pratiques.',
+  title: 'Écosse en van 2 semaines : le grand tour avec la NC500',
+  description: 'Explorez l\'Écosse en van pendant 14 jours : North Coast 500, île de Skye, Highlands. L\'itinéraire complet jour par jour.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/ecosse-en-van-2-semaines/',
   },
   openGraph: {
-    title: 'Écosse en Van 2 Semaines - Le Grand Tour',
-    description: 'Itineraire de 2 semaines en van en Écosse : NC500, Skye, Highlands. Jour par jour.',
+    title: 'Écosse en van 2 semaines : le grand tour avec la NC500',
+    description: 'Explorez l\'Écosse en van pendant 14 jours : North Coast 500, Skye, Highlands.',
     url: 'https://www.explorescotlandvan.com/ecosse-en-van-2-semaines/',
     images: [{ url: '/images/north-coast-500.jpg' }],
   },
@@ -60,9 +60,9 @@ export default function DeuxSemainesPage() {
       />
 
       <HeroPage
-        title="Écosse en Van : 2 Semaines"
-        subtitle="Le grand tour incluant la legendaire North Coast 500"
-        badge="Itineraire 14 jours"
+        title="L'Écosse en van en 2 semaines"
+        subtitle="Le grand tour incluant la légendaire North Coast 500"
+        badge="14 jours + NC500"
         image="/images/north-coast-500.jpg"
         imageAlt="Van sur la North Coast 500 pour un road trip de 2 semaines"
         stats={[

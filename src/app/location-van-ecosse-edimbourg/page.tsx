@@ -8,14 +8,14 @@ import VanShowcase from '@/components/VanShowcase';
 import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
-  title: 'Location Van Écosse Edimbourg - Loueurs et Conseils',
-  description: 'Louez un van a Edimbourg pour votre road trip en Écosse. Comparatif des loueurs, conseils pratiques et itineraires au depart de la capitale.',
+  title: 'Location van Édimbourg : départ idéal pour les Highlands',
+  description: 'Louez un van aménagé à Édimbourg, porte d\'entrée des Highlands. Récupération à l\'aéroport, meilleurs loueurs et conseils pratiques.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/location-van-ecosse-edimbourg/',
   },
   openGraph: {
-    title: 'Location Van Écosse Edimbourg - Loueurs et Conseils',
-    description: 'Louez un van a Edimbourg pour votre road trip en Écosse. Comparatif et conseils.',
+    title: 'Location van Édimbourg : départ idéal pour les Highlands',
+    description: 'Louez un van aménagé à Édimbourg. Récupération aéroport et meilleurs loueurs.',
     url: 'https://www.explorescotlandvan.com/location-van-ecosse-edimbourg/',
     images: [{ url: '/images/van-nature.jpg' }],
   },
@@ -64,9 +64,9 @@ export default function EdimbourgPage() {
       />
 
       <HeroPage
-        title="Location Van Edimbourg"
-        subtitle="Le point de depart ideal pour votre aventure dans les Highlands"
-        badge="Depart Edimbourg"
+        title="Location de van à Édimbourg"
+        subtitle="Votre point de départ idéal pour explorer les Highlands"
+        badge="Départ Édimbourg"
         image="/images/van-nature.jpg"
         imageAlt="Van stationne face a la nature ecossaise pres d'Edimbourg"
         stats={[

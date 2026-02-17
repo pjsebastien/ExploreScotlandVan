@@ -8,14 +8,14 @@ import VanShowcase from '@/components/VanShowcase';
 import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
-  title: 'Location Van Écosse Glasgow - Loueurs et Conseils',
-  description: 'Louez un van a Glasgow pour votre road trip en Écosse. Acces direct a la cote Ouest, Skye et la NC500. Conseils pratiques et itineraires.',
+  title: 'Location van Glasgow : direction la côte ouest',
+  description: 'Louez un van à Glasgow et rejoignez Skye et les Highlands en 1h. Départ parfait pour explorer la côte ouest écossaise.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/location-van-ecosse-glasgow/',
   },
   openGraph: {
-    title: 'Location Van Écosse Glasgow - Loueurs et Conseils',
-    description: 'Louez un van a Glasgow pour votre road trip en Écosse. Acces direct a la cote Ouest et Skye.',
+    title: 'Location van Glasgow : direction la côte ouest',
+    description: 'Louez un van à Glasgow et rejoignez Skye et les Highlands en 1h.',
     url: 'https://www.explorescotlandvan.com/location-van-ecosse-glasgow/',
     images: [{ url: '/images/roadtrip-mer-montagne.jpg' }],
   },
@@ -60,9 +60,9 @@ export default function GlasgowPage() {
       />
 
       <HeroPage
-        title="Location Van Glasgow"
-        subtitle="La porte d'entree vers la cote Ouest sauvage et les iles"
-        badge="Depart Glasgow"
+        title="Location de van à Glasgow"
+        subtitle="La porte d'entrée vers la côte ouest sauvage et les îles"
+        badge="Départ Glasgow"
         image="/images/roadtrip-mer-montagne.jpg"
         imageAlt="Road trip en van entre mer et montagne sur la cote Ouest ecossaise"
         stats={[

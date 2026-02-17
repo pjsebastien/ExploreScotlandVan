@@ -10,14 +10,14 @@ import VanShowcase from '@/components/VanShowcase';
 import HeroHome from '@/components/HeroHome';
 
 export const metadata: Metadata = {
-  title: 'Location Van Écosse - Comparez et Reservez',
-  description: 'Location de van en Écosse : comparez les offres, decouvrez les meilleurs itineraires et conseils pour votre road trip dans les Highlands ecossais.',
+  title: 'Location van aménagé Écosse dès 60€/jour : comparez les offres',
+  description: 'Trouvez votre van aménagé en Écosse parmi les meilleures offres. Comparez, réservez et explorez les Highlands en toute liberté.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/',
   },
   openGraph: {
-    title: 'Location Van Écosse - Comparez et Reservez',
-    description: 'Location de van en Écosse : comparez les offres, decouvrez les meilleurs itineraires et conseils pour votre road trip dans les Highlands ecossais.',
+    title: 'Location van aménagé Écosse dès 60€/jour : comparez les offres',
+    description: 'Trouvez votre van aménagé en Écosse parmi les meilleures offres. Comparez, réservez et explorez les Highlands en toute liberté.',
     url: 'https://www.explorescotlandvan.com/',
   },
 };

@@ -8,14 +8,14 @@ import VanShowcase from '@/components/VanShowcase';
 import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
-  title: 'Prix Location Van Écosse - Tarifs et Budget',
-  description: 'Decouvrez les prix de location de van en Écosse : tarifs par saison, types de vehicules, couts annexes et conseils pour optimiser votre budget.',
+  title: 'Prix location van Écosse : tarifs et budget détaillé',
+  description: 'Découvrez les vrais prix de location de van en Écosse : tarifs journaliers, frais cachés et budget total pour votre road trip dans les Highlands.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/prix-location-van-ecosse/',
   },
   openGraph: {
-    title: 'Prix Location Van Écosse - Tarifs et Budget',
-    description: 'Decouvrez les prix de location de van en Écosse : tarifs par saison, types de vehicules et conseils budget.',
+    title: 'Prix location van Écosse : tarifs et budget détaillé',
+    description: 'Découvrez les vrais prix de location de van en Écosse : tarifs journaliers et budget total.',
     url: 'https://www.explorescotlandvan.com/prix-location-van-ecosse/',
     images: [{ url: '/images/van-montagnes.jpg' }],
   },
@@ -64,9 +64,9 @@ export default function PrixLocationPage() {
       />
 
       <HeroPage
-        title="Prix Location Van Écosse"
-        subtitle="Tarifs, budget et conseils pour optimiser vos depenses de road trip"
-        badge="Guide tarifaire"
+        title="Combien coûte la location d'un van en Écosse ?"
+        subtitle="Tarifs réels, frais cachés et budget détaillé pour votre road trip"
+        badge="Tarifs et budget"
         image="/images/van-montagnes.jpg"
         imageAlt="Van amenage dans les montagnes ecossaises"
         stats={[

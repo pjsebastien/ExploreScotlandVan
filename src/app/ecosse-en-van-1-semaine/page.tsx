@@ -7,14 +7,14 @@ import FAQ from '@/components/FAQ';
 import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
-  title: 'Écosse en Van 1 Semaine - Itineraire Jour par Jour',
-  description: 'Itineraire detaille pour decouvrir l\'Écosse en van en 1 semaine : jour par jour, etapes, distances et conseils pour un road trip reussi.',
+  title: 'Écosse en van 1 semaine : l\'itinéraire essentiel',
+  description: 'Découvrez l\'Écosse en van en 7 jours : Édimbourg, Skye, Glen Coe. Itinéraire jour par jour, spots et budget pour une semaine parfaite.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/ecosse-en-van-1-semaine/',
   },
   openGraph: {
-    title: 'Écosse en Van 1 Semaine - Itineraire Jour par Jour',
-    description: 'Itineraire detaille pour decouvrir l\'Écosse en van en 1 semaine : jour par jour, etapes et conseils.',
+    title: 'Écosse en van 1 semaine : l\'itinéraire essentiel',
+    description: 'Découvrez l\'Écosse en van en 7 jours : Édimbourg, Skye, Glen Coe. Itinéraire jour par jour.',
     url: 'https://www.explorescotlandvan.com/ecosse-en-van-1-semaine/',
     images: [{ url: '/images/roadtrip-panoramique.jpg' }],
   },
@@ -60,9 +60,9 @@ export default function UneSemainePage() {
       />
 
       <HeroPage
-        title="Écosse en Van : 1 Semaine"
-        subtitle="L'itineraire ideal pour une premiere decouverte des Highlands"
-        badge="Itineraire 7 jours"
+        title="L'Écosse en van en 1 semaine"
+        subtitle="L'itinéraire essentiel pour découvrir les Highlands"
+        badge="7 jours"
         image="/images/roadtrip-panoramique.jpg"
         imageAlt="Route panoramique en Ecosse pour un road trip d'une semaine"
         stats={[

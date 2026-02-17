@@ -7,14 +7,14 @@ import FAQ from '@/components/FAQ';
 import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
-  title: 'Dormir en Van en Écosse - Bivouac et Camping',
-  description: 'Ou dormir en van en Ecosse ? Reglementation, meilleurs spots, camping sauvage et conseils pratiques pour vos nuits.',
+  title: 'Dormir en van en Écosse : bivouac, spots et règles',
+  description: 'Bivouac, camping sauvage, aires : tout savoir pour dormir en van en Écosse. Réglementation, meilleurs spots et astuces pour des nuits tranquilles.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/dormir-en-van-ecosse/',
   },
   openGraph: {
-    title: 'Dormir en Van en Écosse - Bivouac et Camping',
-    description: 'Ou dormir en van en Ecosse ? Reglementation, meilleurs spots et conseils.',
+    title: 'Dormir en van en Écosse : bivouac, spots et règles',
+    description: 'Bivouac, camping sauvage : tout savoir pour dormir en van en Écosse.',
     url: 'https://www.explorescotlandvan.com/dormir-en-van-ecosse/',
     images: [{ url: '/images/dormir-van-lac.jpg' }],
   },
@@ -63,9 +63,9 @@ export default function DormirEnVanPage() {
       />
 
       <HeroPage
-        title="Dormir en Van en Écosse"
-        subtitle="Guide complet du bivouac et des meilleures options pour vos nuits"
-        badge="Bivouac & Camping"
+        title="Où dormir en van en Écosse ?"
+        subtitle="Bivouac, camping sauvage et meilleures options pour vos nuits"
+        badge="Bivouac & spots"
         image="/images/dormir-van-lac.jpg"
         imageAlt="Van gare au bord d'un loch ecossais pour la nuit"
         stats={[

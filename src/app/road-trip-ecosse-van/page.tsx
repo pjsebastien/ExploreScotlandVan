@@ -8,14 +8,14 @@ import VanShowcase from '@/components/VanShowcase';
 import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
-  title: 'Road Trip Écosse en Van - Itineraires et Conseils',
-  description: 'Planifiez votre road trip en van en Écosse : itineraires detailles, etapes incontournables, conseils pratiques et astuces pour une aventure reussie.',
+  title: 'Road trip Écosse en van : planifiez votre aventure',
+  description: 'Planifiez votre road trip en van en Écosse. Découvrez nos itinéraires, les incontournables des Highlands et tous les conseils pour une aventure réussie.',
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/road-trip-ecosse-van/',
   },
   openGraph: {
-    title: 'Road Trip Écosse en Van - Itineraires et Conseils',
-    description: 'Planifiez votre road trip en van en Écosse : itineraires detailles, etapes incontournables, conseils pratiques.',
+    title: 'Road trip Écosse en van : planifiez votre aventure',
+    description: 'Planifiez votre road trip en van en Écosse. Découvrez nos itinéraires et conseils pour les Highlands.',
     url: 'https://www.explorescotlandvan.com/road-trip-ecosse-van/',
     images: [{ url: '/images/route-highlands.jpg' }],
   },
@@ -60,9 +60,9 @@ export default function RoadTripPage() {
       />
 
       <HeroPage
-        title="Road Trip Écosse en Van"
-        subtitle="Itineraires, etapes et conseils pour une aventure inoubliable dans les Highlands"
-        badge="Guide complet"
+        title="Road trip en Écosse en van"
+        subtitle="Itinéraires, étapes et conseils pour une aventure inoubliable dans les Highlands"
+        badge="Planification"
         image="/images/route-highlands.jpg"
         imageAlt="Route panoramique traversant les Highlands ecossais"
         stats={[
