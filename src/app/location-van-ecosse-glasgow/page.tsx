@@ -5,6 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
 import VanShowcase from '@/components/VanShowcase';
+import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
   title: 'Location Van Écosse Glasgow - Loueurs et Conseils',
@@ -58,26 +59,19 @@ export default function GlasgowPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <Image
-          src="/images/roadtrip-mer-montagne.jpg"
-          alt="Road trip en van entre mer et montagne sur la cote Ouest ecossaise"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-wide pb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Location Van Écosse Glasgow
-            </h1>
-            <p className="text-xl text-sand-100 max-w-2xl">
-              La porte d&apos;entree vers la cote Ouest et les iles
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroPage
+        title="Location Van Glasgow"
+        subtitle="La porte d'entree vers la cote Ouest sauvage et les iles"
+        badge="Depart Glasgow"
+        image="/images/roadtrip-mer-montagne.jpg"
+        imageAlt="Road trip en van entre mer et montagne sur la cote Ouest ecossaise"
+        stats={[
+          { value: '30+', label: 'Vans disponibles' },
+          { value: '1h', label: 'De la cote Ouest' },
+          { value: '80€', label: 'Prix moyen /jour' },
+          { value: 'Skye', label: 'Acces direct' },
+        ]}
+      />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />

@@ -5,6 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
 import VanShowcase from '@/components/VanShowcase';
+import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
   title: 'Road Trip Écosse en Van - Itineraires et Conseils',
@@ -58,26 +59,19 @@ export default function RoadTripPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <Image
-          src="/images/route-highlands.jpg"
-          alt="Route panoramique traversant les Highlands ecossais"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-wide pb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Road Trip Écosse en Van
-            </h1>
-            <p className="text-xl text-sand-100 max-w-2xl">
-              Itineraires, etapes et conseils pour une aventure inoubliable
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroPage
+        title="Road Trip Écosse en Van"
+        subtitle="Itineraires, etapes et conseils pour une aventure inoubliable dans les Highlands"
+        badge="Guide complet"
+        image="/images/route-highlands.jpg"
+        imageAlt="Route panoramique traversant les Highlands ecossais"
+        stats={[
+          { value: '830 km', label: 'North Coast 500' },
+          { value: '3', label: 'Itineraires proposes' },
+          { value: '7-14', label: 'Jours recommandes' },
+          { value: '100%', label: 'Liberte' },
+        ]}
+      />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />

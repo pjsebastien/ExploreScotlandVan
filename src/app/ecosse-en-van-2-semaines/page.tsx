@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
+import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
   title: 'Écosse en Van 2 Semaines - Le Grand Tour',
@@ -58,26 +59,19 @@ export default function DeuxSemainesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <Image
-          src="/images/north-coast-500.jpg"
-          alt="Van sur la North Coast 500 pour un road trip de 2 semaines"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-wide pb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Écosse en Van : 2 Semaines
-            </h1>
-            <p className="text-xl text-sand-100 max-w-2xl">
-              Le grand tour incluant la legendaire North Coast 500
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroPage
+        title="Écosse en Van : 2 Semaines"
+        subtitle="Le grand tour incluant la legendaire North Coast 500"
+        badge="Itineraire 14 jours"
+        image="/images/north-coast-500.jpg"
+        imageAlt="Van sur la North Coast 500 pour un road trip de 2 semaines"
+        stats={[
+          { value: '14', label: 'Jours d\'aventure' },
+          { value: '1800 km', label: 'A parcourir' },
+          { value: 'NC500', label: 'Incluse' },
+          { value: '3000€', label: 'Budget moyen' },
+        ]}
+      />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />

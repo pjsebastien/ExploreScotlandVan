@@ -5,6 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
 import VanShowcase from '@/components/VanShowcase';
+import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
   title: 'Location Van Écosse Edimbourg - Loueurs et Conseils',
@@ -62,26 +63,19 @@ export default function EdimbourgPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <Image
-          src="/images/van-nature.jpg"
-          alt="Van stationne face a la nature ecossaise pres d&apos;Edimbourg"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-wide pb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Location Van Écosse Edimbourg
-            </h1>
-            <p className="text-xl text-sand-100 max-w-2xl">
-              Le point de depart ideal pour votre aventure ecossaise
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroPage
+        title="Location Van Edimbourg"
+        subtitle="Le point de depart ideal pour votre aventure dans les Highlands"
+        badge="Depart Edimbourg"
+        image="/images/van-nature.jpg"
+        imageAlt="Van stationne face a la nature ecossaise pres d'Edimbourg"
+        stats={[
+          { value: '50+', label: 'Vans disponibles' },
+          { value: '2h', label: 'Des Highlands' },
+          { value: '85€', label: 'Prix moyen /jour' },
+          { value: '#1', label: 'Point de depart' },
+        ]}
+      />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />

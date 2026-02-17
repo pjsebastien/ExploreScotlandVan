@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
+import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
   title: 'Écosse en Van 1 Semaine - Itineraire Jour par Jour',
@@ -58,26 +59,19 @@ export default function UneSemainePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <Image
-          src="/images/roadtrip-panoramique.jpg"
-          alt="Route panoramique en Ecosse pour un road trip d&apos;une semaine"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-wide pb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Écosse en Van : 1 Semaine
-            </h1>
-            <p className="text-xl text-sand-100 max-w-2xl">
-              L&apos;itineraire ideal pour une premiere decouverte des Highlands
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroPage
+        title="Écosse en Van : 1 Semaine"
+        subtitle="L'itineraire ideal pour une premiere decouverte des Highlands"
+        badge="Itineraire 7 jours"
+        image="/images/roadtrip-panoramique.jpg"
+        imageAlt="Route panoramique en Ecosse pour un road trip d'une semaine"
+        stats={[
+          { value: '7', label: 'Jours d\'aventure' },
+          { value: '800 km', label: 'A parcourir' },
+          { value: '5', label: 'Etapes cles' },
+          { value: '1500€', label: 'Budget moyen' },
+        ]}
+      />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />

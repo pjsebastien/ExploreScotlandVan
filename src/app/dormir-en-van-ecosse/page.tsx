@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
+import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
   title: 'Dormir en Van en Écosse - Bivouac et Camping',
@@ -61,26 +62,19 @@ export default function DormirEnVanPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <Image
-          src="/images/dormir-van-lac.jpg"
-          alt="Van gare au bord d&apos;un loch ecossais pour la nuit"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-wide pb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Dormir en Van en Écosse
-            </h1>
-            <p className="text-xl text-sand-100 max-w-2xl">
-              Guide complet du bivouac et des meilleures options pour vos nuits
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroPage
+        title="Dormir en Van en Écosse"
+        subtitle="Guide complet du bivouac et des meilleures options pour vos nuits"
+        badge="Bivouac & Camping"
+        image="/images/dormir-van-lac.jpg"
+        imageAlt="Van gare au bord d'un loch ecossais pour la nuit"
+        stats={[
+          { value: '0€', label: 'Bivouac gratuit' },
+          { value: '200+', label: 'Spots recenses' },
+          { value: '20€', label: 'Camping /nuit' },
+          { value: '2003', label: 'Right to Roam' },
+        ]}
+      />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />

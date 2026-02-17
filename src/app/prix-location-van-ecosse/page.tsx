@@ -5,6 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import FAQ from '@/components/FAQ';
 import VanShowcase from '@/components/VanShowcase';
+import HeroPage from '@/components/HeroPage';
 
 export const metadata: Metadata = {
   title: 'Prix Location Van Écosse - Tarifs et Budget',
@@ -62,26 +63,19 @@ export default function PrixLocationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <Image
-          src="/images/van-montagnes.jpg"
-          alt="Van amenage dans les montagnes ecossaises"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container-wide pb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Prix Location Van Écosse
-            </h1>
-            <p className="text-xl text-sand-100 max-w-2xl">
-              Tarifs, budget et conseils pour optimiser vos depenses
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroPage
+        title="Prix Location Van Écosse"
+        subtitle="Tarifs, budget et conseils pour optimiser vos depenses de road trip"
+        badge="Guide tarifaire"
+        image="/images/van-montagnes.jpg"
+        imageAlt="Van amenage dans les montagnes ecossaises"
+        stats={[
+          { value: '85€', label: 'Prix moyen /jour' },
+          { value: '-40%', label: 'Hors saison' },
+          { value: '100+', label: 'Vans compares' },
+          { value: '0€', label: 'Frais caches' },
+        ]}
+      />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />

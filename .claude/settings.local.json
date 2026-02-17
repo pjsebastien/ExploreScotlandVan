@@ -19,7 +19,8 @@
       "Bash(move:*)",
       "WebFetch(domain:www.goboony.fr)",
       "Bash(node:*)",
-      "Bash(xargs sed:*)"
+      "Bash(xargs sed:*)",
+      "WebFetch(domain:www.exploreirelandvan.com)"
     ]
   }
 }

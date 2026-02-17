@@ -7,6 +7,7 @@ import FAQ from '@/components/FAQ';
 import Highlight from '@/components/Highlight';
 import Comparatif from '@/components/Comparatif';
 import VanShowcase from '@/components/VanShowcase';
+import HeroHome from '@/components/HeroHome';
 
 export const metadata: Metadata = {
   title: 'Location Van Écosse - Comparez et Reservez',
@@ -119,96 +120,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Hero Section - Clean Professional Design */}
-      <section className="bg-gradient-to-br from-forest-50 via-white to-sand-50 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-forest-900 mb-6">
-                Louer un van aménagé en Écosse
-              </h1>
-              <p className="text-xl text-stone-600 mb-8 leading-relaxed">
-                Partez a la decouverte des Highlands en toute liberte. Comparez les vans disponibles
-                et reservez votre aventure ecossaise.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://www.yescapa.fr/s?radius=417129.09846972214&latitude=55.95438&longitude=-3.20145&where=Royaume-Uni%2C+Scotland&beds=2&seatbelts=2&page=1&ae=620&aev=vanecosse"
-                  target="_blank"
-                  rel="sponsored noopener nofollow"
-                  className="inline-flex items-center justify-center rounded-xl bg-forest-700 px-8 py-4 text-lg font-semibold text-white hover:bg-forest-800 transition-colors"
-                >
-                  Voir les vans disponibles
-                  <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </a>
-                <a
-                  href="#content"
-                  className="inline-flex items-center justify-center rounded-xl border-2 border-forest-700 px-8 py-4 text-lg font-semibold text-forest-700 hover:bg-forest-50 transition-colors"
-                >
-                  En savoir plus
-                </a>
-              </div>
-              <div className="mt-8 flex items-center gap-6 text-sm text-stone-500">
-                <div className="flex items-center gap-2">
-                  <svg className="h-5 w-5 text-forest-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Assurance incluse
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="h-5 w-5 text-forest-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Annulation flexible
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="relative h-48 rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/images/hero-highlands.jpg"
-                      alt="Van dans les Highlands ecossais"
-                      fill
-                      priority
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative h-32 rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/images/dormir-van-lac.jpg"
-                      alt="Van au bord d&apos;un loch"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4 pt-8">
-                  <div className="relative h-32 rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/images/route-highlands.jpg"
-                      alt="Route des Highlands"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative h-48 rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/images/north-coast-500.jpg"
-                      alt="North Coast 500"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroHome />
 
       <div className="container-narrow">
         <Breadcrumb items={breadcrumbItems} />
