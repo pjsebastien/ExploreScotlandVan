@@ -17,16 +17,16 @@ const breadcrumbItems = [
 
 const faqItems = [
   {
-    question: 'Peut-on faire tout l\'itineraire en moins de 2 semaines ?',
-    answer: 'C\'est deconseille. Cet itineraire est deja optimise pour 14 jours. Le reduire signifierait passer plus de temps sur la route qu\'a profiter des sites. Pour moins de temps, consultez notre itineraire d\'1 semaine.',
+    question: 'Peut-on faire tout l\'itinéraire en moins de 2 semaines ?',
+    answer: 'C\'est déconseillé. Cet itinéraire est déjà optimisé pour 14 jours. Le réduire signifierait passer plus de temps sur la route qu\'à profiter des sites. Pour moins de temps, consultez notre itinéraire d\'1 semaine.',
   },
   {
     question: 'Quel est le meilleur sens pour la North Coast 500 ?',
-    answer: 'Les deux sens ont leurs avantages. Le sens horaire (vers l\'ouest d\'abord) offre la cote sauvage en premier. Le sens anti-horaire garde le meilleur pour la fin. Nous recommandons le sens horaire.',
+    answer: 'Les deux sens ont leurs avantages. Le sens horaire (vers l\'ouest d\'abord) offre la côte sauvage en premier. Le sens anti-horaire garde le meilleur pour la fin. Nous recommandons le sens horaire.',
   },
   {
-    question: 'Faut-il un 4x4 pour cet itineraire ?',
-    answer: 'Non, un van standard suffit pour toutes les routes de cet itineraire. Certaines routes sont etroites (single track) mais goudronnees et praticables par tous les vehicules.',
+    question: 'Faut-il un 4x4 pour cet itinéraire ?',
+    answer: 'Non, un van standard suffit pour toutes les routes de cet itinéraire. Certaines routes sont étroites (single track) mais goudronnées et praticables par tous les véhicules.',
   },
 ];
 
@@ -264,9 +264,12 @@ function DayCard({ day, isExpanded, onToggle }: DayCardProps) {
           </div>
         </button>
 
-        {/* Expanded content */}
-        {isExpanded && (
-          <div className="px-4 md:px-6 pb-6 border-t border-stone-100 pt-6">
+        {/* Expanded content - always in DOM for SEO, hidden visually */}
+        <div
+          className={`px-4 md:px-6 pb-6 border-t border-stone-100 pt-6 ${
+            isExpanded ? '' : 'hidden'
+          }`}
+        >
             <p className="text-stone-600 mb-4">{day.description}</p>
 
             {/* Highlights */}
@@ -299,9 +302,8 @@ function DayCard({ day, isExpanded, onToggle }: DayCardProps) {
               </div>
             )}
           </div>
-        )}
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -321,10 +323,12 @@ export default function DeuxSemainesPage() {
             '@context': 'https://schema.org',
             '@type': 'Article',
             headline: 'Écosse en Van 2 Semaines',
-            description: 'Itineraire de 2 semaines en van en Écosse avec la North Coast 500 et plus.',
+            description: 'Itinéraire de 2 semaines en van en Écosse avec la North Coast 500 et plus.',
             image: 'https://www.explorescotlandvan.com/images/north-coast-500.jpg',
-            author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
-            publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
+            datePublished: '2026-01-20',
+            dateModified: '2026-02-19',
+            author: { '@type': 'Organization', name: 'ExploreScotlandVan', url: 'https://www.explorescotlandvan.com/' },
+            publisher: { '@type': 'Organization', name: 'ExploreScotlandVan', logo: { '@type': 'ImageObject', url: 'https://www.explorescotlandvan.com/images/favicon.png' } },
           }),
         }}
       />
@@ -337,7 +341,7 @@ export default function DeuxSemainesPage() {
         imageAlt="Van sur la North Coast 500 pour un road trip de 2 semaines"
         stats={[
           { value: '14', label: 'Jours d\'aventure' },
-          { value: '1800 km', label: 'A parcourir' },
+          { value: '1800 km', label: 'À parcourir' },
           { value: 'NC500', label: 'Incluse' },
           { value: '3000€', label: 'Budget moyen' },
         ]}

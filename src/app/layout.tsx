@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     default: "Location Van Écosse | ExploreScotlandVan",
     template: "%s | ExploreScotlandVan",
   },
-  description: "Location de van amenage en Écosse. Comparez les offres, planifiez votre road trip dans les Highlands et decouvrez les meilleurs itineraires.",
-  keywords: ["location van ecosse", "van amenage ecosse", "road trip ecosse", "highlands van", "location van edimbourg", "location van glasgow"],
+  description: "Location de van aménagé en Écosse. Comparez les offres, planifiez votre road trip dans les Highlands et découvrez les meilleurs itinéraires.",
   authors: [{ name: "ExploreScotlandVan" }],
   creator: "ExploreScotlandVan",
   publisher: "ExploreScotlandVan",
@@ -26,23 +25,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://www.explorescotlandvan.com",
+    url: "https://www.explorescotlandvan.com/",
     siteName: "ExploreScotlandVan",
-    title: "Location Van Ecosse | ExploreScotlandVan",
-    description: "Location de van amenage en Écosse. Comparez les offres, planifiez votre road trip dans les Highlands et decouvrez les meilleurs itineraires.",
+    title: "Location Van Écosse | ExploreScotlandVan",
+    description: "Location de van aménagé en Écosse. Comparez les offres, planifiez votre road trip dans les Highlands et découvrez les meilleurs itinéraires.",
     images: [
       {
         url: "/images/hero-highlands.jpg",
         width: 1200,
         height: 630,
-        alt: "Van amenage dans les Highlands ecossais",
+        alt: "Van aménagé dans les Highlands écossais",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Location Van Ecosse | ExploreScotlandVan",
-    description: "Location de van amenage en Écosse. Comparez les offres, planifiez votre road trip dans les Highlands.",
+    title: "Location Van Écosse | ExploreScotlandVan",
+    description: "Location de van aménagé en Écosse. Comparez les offres, planifiez votre road trip dans les Highlands.",
     images: ["/images/hero-highlands.jpg"],
   },
   robots: {
@@ -56,8 +55,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
   alternates: {
-    canonical: "https://www.explorescotlandvan.com",
+    canonical: "https://www.explorescotlandvan.com/",
   },
 };
 

@@ -33,6 +33,7 @@ export default function HeroPage({
             alt={imageAlt}
             fill
             priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-forest-900/40 via-forest-900/20 to-transparent lg:bg-gradient-to-l" />

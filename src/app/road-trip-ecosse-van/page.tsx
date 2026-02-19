@@ -29,15 +29,15 @@ const breadcrumbItems = [
 const faqItems = [
   {
     question: 'Quelle est la meilleure saison pour un road trip en Écosse ?',
-    answer: 'La periode ideale s\'etend de mai a septembre. Mai-juin offrent de longues journees et moins de touristes. Juillet-aout sont plus frequentes mais beneficient du meilleur temps. Septembre propose de magnifiques couleurs automnales.',
+    answer: 'La période idéale s\'étend de mai à septembre. Mai-juin offrent de longues journées et moins de touristes. Juillet-août sont plus fréquentées mais bénéficient du meilleur temps. Septembre propose de magnifiques couleurs automnales.',
   },
   {
-    question: 'Combien de kilometres peut-on parcourir par jour ?',
-    answer: 'Nous recommandons 150 a 200 km par jour maximum. Les routes ecossaises sont sinueuses et les paysages meritent des arrets frequents. Prevoyez plus de temps que ce qu\'indique le GPS.',
+    question: 'Combien de kilomètres peut-on parcourir par jour ?',
+    answer: 'Nous recommandons 150 à 200 km par jour maximum. Les routes écossaises sont sinueuses et les paysages méritent des arrêts fréquents. Prévoyez plus de temps que ce qu\'indique le GPS.',
   },
   {
-    question: 'Faut-il reserver les campings a l\'avance ?',
-    answer: 'En haute saison (juillet-aout), il est conseille de reserver les campings populaires, surtout sur l\'ile de Skye. Le reste de l\'annee, la flexibilite est possible grace au bivouac autorise.',
+    question: 'Faut-il réserver les campings à l\'avance ?',
+    answer: 'En haute saison (juillet-août), il est conseillé de réserver les campings populaires, surtout sur l\'île de Skye. Le reste de l\'année, la flexibilité est possible grâce au bivouac autorisé.',
   },
 ];
 
@@ -45,10 +45,12 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Road Trip Écosse en Van',
-  description: 'Planifiez votre road trip en van en Écosse avec nos itineraires detailles et conseils pratiques.',
+  description: 'Planifiez votre road trip en van en Écosse avec nos itinéraires détaillés et conseils pratiques.',
   image: 'https://www.explorescotlandvan.com/images/route-highlands.jpg',
-  author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
-  publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
+  datePublished: '2026-01-15',
+  dateModified: '2026-02-19',
+  author: { '@type': 'Organization', name: 'ExploreScotlandVan', url: 'https://www.explorescotlandvan.com/' },
+  publisher: { '@type': 'Organization', name: 'ExploreScotlandVan', logo: { '@type': 'ImageObject', url: 'https://www.explorescotlandvan.com/images/favicon.png' } },
 };
 
 export default function RoadTripPage() {
@@ -64,12 +66,12 @@ export default function RoadTripPage() {
         subtitle="Itinéraires, étapes et conseils pour une aventure inoubliable dans les Highlands"
         badge="Planification"
         image="/images/route-highlands.jpg"
-        imageAlt="Route panoramique traversant les Highlands ecossais"
+        imageAlt="Route panoramique traversant les Highlands écossais"
         stats={[
           { value: '830 km', label: 'North Coast 500' },
-          { value: '3', label: 'Itineraires proposes' },
-          { value: '7-14', label: 'Jours recommandes' },
-          { value: '100%', label: 'Liberte' },
+          { value: '3', label: 'Itinéraires proposés' },
+          { value: '7-14', label: 'Jours recommandés' },
+          { value: '100%', label: 'Liberté' },
         ]}
       />
 
@@ -82,107 +84,107 @@ export default function RoadTripPage() {
       <article className="container-narrow section-padding">
         <div className="prose-custom">
           <p className="text-xl text-stone-600 mb-8">
-            Un <strong>road trip en van en Écosse</strong> represente l&apos;experience ultime pour les amoureux
+            Un <strong>road trip en van en Écosse</strong> représente l&apos;expérience ultime pour les amoureux
             de nature et d&apos;aventure. Des lochs brumeux aux sommets des Highlands, en passant par les
-            cotes sauvages et les villages pittoresques, l&apos;Écosse offre une diversite de paysages
+            côtes sauvages et les villages pittoresques, l&apos;Écosse offre une diversité de paysages
             incomparable. Ce guide vous accompagne dans la planification de votre voyage.
           </p>
 
-          <h2>Les meilleurs itineraires pour un road trip en van en Écosse</h2>
+          <h2>Les meilleurs itinéraires pour un road trip en van en Écosse</h2>
 
           <p>
-            L&apos;Écosse propose plusieurs itineraires mythiques parfaitement adaptes au voyage en van.
-            Chacun offre une experience unique et des paysages differents.
+            L&apos;Écosse propose plusieurs itinéraires mythiques parfaitement adaptés au voyage en van.
+            Chacun offre une expérience unique et des paysages différents.
           </p>
 
-          <h3>La North Coast 500 : le circuit legendaire</h3>
+          <h3>La North Coast 500 : le circuit légendaire</h3>
 
           <p>
-            La <strong>North Coast 500</strong> (NC500) est souvent comparee a la Route 66 americaine.
-            Cette boucle de 830 kilometres longe les cotes nord de l&apos;Écosse, offrant certains des
-            paysages les plus spectaculaires du pays. Le circuit part generalement d&apos;Inverness et
+            La <strong>North Coast 500</strong> (NC500) est souvent comparée à la Route 66 américaine.
+            Cette boucle de 830 kilomètres longe les côtes nord de l&apos;Écosse, offrant certains des
+            paysages les plus spectaculaires du pays. Le circuit part généralement d&apos;Inverness et
             peut se parcourir dans les deux sens.
           </p>
 
-          <p>Les etapes incontournables de la NC500 :</p>
+          <p>Les étapes incontournables de la NC500 :</p>
           <ul>
             <li><strong>Applecross :</strong> La route du Bealach na Ba offre des vues vertigineuses</li>
             <li><strong>Torridon :</strong> Montagnes dramatiques et lochs paisibles</li>
             <li><strong>Durness :</strong> La plage de Smoo Cave et ses grottes</li>
-            <li><strong>John o&apos; Groats :</strong> L&apos;extremite nord-est du Royaume-Uni</li>
+            <li><strong>John o&apos; Groats :</strong> L&apos;extrémité nord-est du Royaume-Uni</li>
             <li><strong>Duncansby Head :</strong> Stacks rocheux impressionnants</li>
           </ul>
 
           <p>
-            Prevoyez minimum 5 jours pour ce circuit, idealement une semaine pour profiter sans
-            vous presser. Les routes sont parfois etroites (single track roads), ce qui ralentit
+            Prévoyez minimum 5 jours pour ce circuit, idéalement une semaine pour profiter sans
+            vous presser. Les routes sont parfois étroites (single track roads), ce qui ralentit
             la progression mais fait partie du charme.
           </p>
 
           <div className="my-12">
             <Image
               src="/images/north-coast-500.jpg"
-              alt="Van amenage sur la North Coast 500 face a la mer"
+              alt="Van aménagé sur la North Coast 500 face à la mer"
               width={1200}
               height={600}
               className="rounded-xl shadow-lg w-full h-auto"
             />
             <p className="text-sm text-stone-500 mt-2 text-center">
-              La North Coast 500 offre des panoramas a couper le souffle
+              La North Coast 500 offre des panoramas à couper le souffle
             </p>
           </div>
 
-          <h3>L&apos;ile de Skye et la cote ouest</h3>
+          <h3>L&apos;île de Skye et la côte ouest</h3>
 
           <p>
-            L&apos;<strong>ile de Skye</strong> est sans doute la destination la plus photogenique d&apos;Écosse.
-            Accessible par un pont depuis Kyle of Lochalsh, elle concentre une densite incroyable de
-            sites exceptionnels sur une surface relativement reduite.
+            L&apos;<strong>île de Skye</strong> est sans doute la destination la plus photogénique d&apos;Écosse.
+            Accessible par un pont depuis Kyle of Lochalsh, elle concentre une densité incroyable de
+            sites exceptionnels sur une surface relativement réduite.
           </p>
 
-          <p>A ne pas manquer sur Skye :</p>
+          <p>À ne pas manquer sur Skye :</p>
           <ul>
-            <li><strong>Le Quiraing :</strong> Formations rocheuses surrealisates pour une randonnee memorable</li>
-            <li><strong>The Old Man of Storr :</strong> Pic rocheux emblematique visible depuis la route</li>
+            <li><strong>Le Quiraing :</strong> Formations rocheuses surréalistes pour une randonnée mémorable</li>
+            <li><strong>The Old Man of Storr :</strong> Pic rocheux emblématique visible depuis la route</li>
             <li><strong>Les Fairy Pools :</strong> Piscines naturelles aux eaux cristallines</li>
-            <li><strong>Neist Point :</strong> Phare au bout du monde avec vue sur les Hebrides</li>
-            <li><strong>Portree :</strong> Village colore et capital de l&apos;ile</li>
+            <li><strong>Neist Point :</strong> Phare au bout du monde avec vue sur les Hébrides</li>
+            <li><strong>Portree :</strong> Village coloré et capitale de l&apos;île</li>
           </ul>
 
           <p>
-            Prevoyez 3 a 4 jours minimum pour explorer Skye. En haute saison, les parkings se
-            remplissent vite aux sites populaires. L&apos;avantage du van est de pouvoir partir tot
-            le matin pour eviter la foule.
+            Prévoyez 3 à 4 jours minimum pour explorer Skye. En haute saison, les parkings se
+            remplissent vite aux sites populaires. L&apos;avantage du van est de pouvoir partir tôt
+            le matin pour éviter la foule.
           </p>
 
           <h3>Les Highlands centraux et le Loch Ness</h3>
 
           <p>
-            Cet itineraire classique convient parfaitement pour un <Link href="/ecosse-en-van-1-semaine/">premier
-            voyage d&apos;une semaine</Link>. Il permet de decouvrir l&apos;essence de l&apos;Écosse sans parcourir
+            Cet itinéraire classique convient parfaitement pour un <Link href="/ecosse-en-van-1-semaine/">premier
+            voyage d&apos;une semaine</Link>. Il permet de découvrir l&apos;essence de l&apos;Écosse sans parcourir
             de trop grandes distances.
           </p>
 
           <p>Les points forts de ce circuit :</p>
           <ul>
-            <li><strong>Glen Coe :</strong> Vallee glaciaire aux paysages dramatiques, decor de films celebres</li>
+            <li><strong>Glen Coe :</strong> Vallée glaciaire aux paysages dramatiques, décor de films célèbres</li>
             <li><strong>Fort William :</strong> Base pour l&apos;ascension du Ben Nevis, plus haut sommet britannique</li>
-            <li><strong>Loch Ness :</strong> Le lac mythique et les ruines du chateau d&apos;Urquhart</li>
+            <li><strong>Loch Ness :</strong> Le lac mythique et les ruines du château d&apos;Urquhart</li>
             <li><strong>Inverness :</strong> Capitale des Highlands, ville charmante</li>
             <li><strong>Cairngorms :</strong> Parc national aux paysages de montagne sublimes</li>
           </ul>
         </div>
 
-        <AffiliateCTA variant="compact" title="Pret pour votre road trip ?" />
+        <AffiliateCTA variant="compact" title="Prêt pour votre road trip ?" />
 
         <div className="prose-custom">
           <h2>Conseils pratiques pour votre road trip en van</h2>
 
-          <h3>Planifier ses etapes sans trop planifier</h3>
+          <h3>Planifier ses étapes sans trop planifier</h3>
 
           <p>
             Le paradoxe du road trip en van : il faut planifier suffisamment pour ne pas perdre
-            de temps, tout en gardant la flexibilite qui fait le charme de ce mode de voyage.
+            de temps, tout en gardant la flexibilité qui fait le charme de ce mode de voyage.
             Notre conseil : identifiez 2-3 incontournables par jour et laissez-vous porter pour
             le reste.
           </p>
@@ -190,47 +192,47 @@ export default function RoadTripPage() {
           <h3>Les single track roads</h3>
 
           <p>
-            De nombreuses routes ecossaises sont a voie unique (single track). Des "passing places"
-            (aires de croisement) permettent de laisser passer les vehicules venant en face ou de
-            laisser doubler ceux qui arrivent derriere vous. Roulez prudemment et utilisez ces aires
-            avec courtoisie - c&apos;est une regle d&apos;or en Ecosse.
+            De nombreuses routes écossaises sont à voie unique (single track). Des "passing places"
+            (aires de croisement) permettent de laisser passer les véhicules venant en face ou de
+            laisser doubler ceux qui arrivent derrière vous. Roulez prudemment et utilisez ces aires
+            avec courtoisie - c&apos;est une règle d&apos;or en Écosse.
           </p>
 
-          <h3>La meteo ecossaise</h3>
+          <h3>La météo écossaise</h3>
 
           <p>
-            "Il n&apos;y a pas de mauvais temps, seulement de mauvais vetements" : ce proverbe ecossais
-            resume bien la philosophie locale. La meteo est changeante et impredictible. Prevoyez
-            des couches, des vetements impermeables, et acceptez que la pluie fait partie du paysage.
-            Souvent, les plus belles lumieres arrivent juste apres une averse.
+            "Il n&apos;y a pas de mauvais temps, seulement de mauvais vêtements" : ce proverbe écossais
+            résume bien la philosophie locale. La météo est changeante et imprévisible. Prévoyez
+            des couches, des vêtements imperméables, et acceptez que la pluie fait partie du paysage.
+            Souvent, les plus belles lumières arrivent juste après une averse.
           </p>
 
           <div className="my-12">
             <Image
               src="/images/van-montagnes.jpg"
-              alt="Van amenage au coeur des montagnes ecossaises avec nuages dramatiques"
+              alt="Van aménagé au coeur des montagnes écossaises avec nuages dramatiques"
               width={1200}
               height={600}
               className="rounded-xl shadow-lg w-full h-auto"
             />
             <p className="text-sm text-stone-500 mt-2 text-center">
-              La meteo changeante cree des ambiances uniques
+              La météo changeante crée des ambiances uniques
             </p>
           </div>
 
           <h3>Ravitaillement et services</h3>
 
           <p>
-            Dans les Highlands, les stations-service peuvent etre espacees de plusieurs dizaines
-            de kilometres. Gardez toujours au moins un quart de reservoir et faites le plein des
-            que l&apos;occasion se presente. Meme conseil pour l&apos;eau et les provisions : les commerces
-            sont rares dans les zones reculees.
+            Dans les Highlands, les stations-service peuvent être espacées de plusieurs dizaines
+            de kilomètres. Gardez toujours au moins un quart de réservoir et faites le plein dès
+            que l&apos;occasion se présente. Même conseil pour l&apos;eau et les provisions : les commerces
+            sont rares dans les zones reculées.
           </p>
 
           <h2>Budget pour un road trip en van en Écosse</h2>
 
           <p>
-            Le budget depend de nombreux facteurs : duree, saison, type de van, habitudes de
+            Le budget dépend de nombreux facteurs : durée, saison, type de van, habitudes de
             consommation. Voici une estimation pour un couple :
           </p>
 
@@ -238,34 +240,34 @@ export default function RoadTripPage() {
             <li><strong>Location van :</strong> 100-150€/jour en moyenne (voir notre <Link href="/prix-location-van-ecosse/">guide des prix</Link>)</li>
             <li><strong>Carburant :</strong> 20-40€/jour selon les distances</li>
             <li><strong>Alimentation :</strong> 30-50€/jour (courses + restaurants occasionnels)</li>
-            <li><strong>Camping/aires :</strong> 0-30€/jour (bivouac gratuit a camping equipe)</li>
-            <li><strong>Visites/activites :</strong> 10-30€/jour</li>
+            <li><strong>Camping/aires :</strong> 0-30€/jour (bivouac gratuit à camping équipé)</li>
+            <li><strong>Visites/activités :</strong> 10-30€/jour</li>
           </ul>
 
           <p>
-            Total approximatif : <strong>160 a 300€ par jour</strong> pour deux personnes, tout compris.
-            Un road trip de 10 jours coute donc entre 1600€ et 3000€ (hors vols).
+            Total approximatif : <strong>160 à 300€ par jour</strong> pour deux personnes, tout compris.
+            Un road trip de 10 jours coûte donc entre 1600€ et 3000€ (hors vols).
           </p>
 
-          <h2>Duree ideale selon votre itineraire</h2>
+          <h2>Durée idéale selon votre itinéraire</h2>
 
           <p>
-            Chaque itineraire demande un temps minimum pour etre apprecie :
+            Chaque itinéraire demande un temps minimum pour être apprécié :
           </p>
 
           <ul>
-            <li><strong>North Coast 500 :</strong> 5 a 7 jours minimum</li>
-            <li><strong>Ile de Skye + environs :</strong> 4 a 5 jours</li>
-            <li><strong>Highlands centraux :</strong> 3 a 4 jours</li>
+            <li><strong>North Coast 500 :</strong> 5 à 7 jours minimum</li>
+            <li><strong>Île de Skye + environs :</strong> 4 à 5 jours</li>
+            <li><strong>Highlands centraux :</strong> 3 à 4 jours</li>
             <li><strong>Tour complet :</strong> <Link href="/ecosse-en-van-2-semaines/">2 semaines minimum</Link></li>
           </ul>
 
           <p>
             Notre recommandation : ne sous-estimez jamais les temps de trajet. Les routes sont
-            belles mais lentes, et vous voudrez vous arreter souvent.
+            belles mais lentes, et vous voudrez vous arrêter souvent.
           </p>
 
-          <h2>Nos itineraires types</h2>
+          <h2>Nos itinéraires types</h2>
 
           <div className="grid md:grid-cols-2 gap-6 my-8">
             <Link
@@ -276,7 +278,7 @@ export default function RoadTripPage() {
                 Écosse en Van : 1 Semaine
               </h3>
               <p className="text-stone-600">
-                L&apos;itineraire ideal pour une premiere decouverte : Highlands centraux, Skye et Loch Ness.
+                L&apos;itinéraire idéal pour une première découverte : Highlands centraux, Skye et Loch Ness.
               </p>
             </Link>
 
@@ -296,11 +298,11 @@ export default function RoadTripPage() {
 
         <AffiliateCTA
           variant="hero"
-          title="Trouvez le van ideal pour votre road trip"
-          description="Comparez les offres de location et reservez votre van pour l&apos;aventure ecossaise."
+          title="Trouvez le van idéal pour votre road trip"
+          description="Comparez les offres de location et réservez votre van pour l&apos;aventure écossaise."
         />
 
-        <FAQ items={faqItems} title="Questions frequentes" />
+        <FAQ items={faqItems} title="Questions fréquentes" />
       </article>
     </>
   );

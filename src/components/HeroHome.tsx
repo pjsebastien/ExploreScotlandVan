@@ -58,7 +58,7 @@ export default function HeroHome() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
               </svg>
-              Aventure ecossaise
+              Aventure écossaise
             </div>
 
             {/* Heading */}
@@ -69,8 +69,8 @@ export default function HeroHome() {
 
             {/* Description */}
             <p className="text-lg md:text-xl text-forest-100/90 leading-relaxed mb-8 max-w-xl">
-              Partez a la decouverte des Highlands en toute liberte. Comparez les meilleurs vans
-              et reservez votre aventure sur les routes mythiques de l&apos;Écosse.
+              Partez à la découverte des Highlands en toute liberté. Comparez les meilleurs vans
+              et réservez votre aventure sur les routes mythiques de l&apos;Écosse.
             </p>
 
             {/* CTA Buttons */}
@@ -90,7 +90,7 @@ export default function HeroHome() {
                 href="/road-trip-ecosse-van/"
                 className="inline-flex items-center justify-center rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white hover:bg-white/20 hover:border-white/50 transition-all duration-200"
               >
-                Voir les itineraires
+                Voir les itinéraires
               </Link>
             </div>
 
@@ -119,9 +119,10 @@ export default function HeroHome() {
                 <div className="relative h-[280px] md:h-[360px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
                   <Image
                     src="/images/hero-highlands.jpg"
-                    alt="Van amenage dans les Highlands ecossais"
+                    alt="Van aménagé dans les Highlands écossais"
                     fill
                     priority
+                    sizes="(max-width: 1024px) 58vw, 29vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-900/30 to-transparent" />
@@ -135,6 +136,7 @@ export default function HeroHome() {
                     src="/images/route-highlands.jpg"
                     alt="Route panoramique des Highlands"
                     fill
+                    sizes="(max-width: 1024px) 42vw, 21vw"
                     className="object-cover"
                   />
                 </div>
@@ -143,6 +145,7 @@ export default function HeroHome() {
                     src="/images/north-coast-500.jpg"
                     alt="North Coast 500"
                     fill
+                    sizes="(max-width: 1024px) 42vw, 21vw"
                     className="object-cover"
                   />
                 </div>
@@ -153,8 +156,9 @@ export default function HeroHome() {
                 <div className="relative h-[120px] md:h-[140px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/10">
                   <Image
                     src="/images/dormir-van-lac.jpg"
-                    alt="Van au bord d'un loch ecossais"
+                    alt="Van au bord d'un loch écossais"
                     fill
+                    sizes="(max-width: 1024px) 42vw, 21vw"
                     className="object-cover"
                   />
                 </div>
@@ -163,8 +167,9 @@ export default function HeroHome() {
                 <div className="relative h-[120px] md:h-[140px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/10">
                   <Image
                     src="/images/van-montagnes.jpg"
-                    alt="Van face aux montagnes ecossaises"
+                    alt="Van face aux montagnes écossaises"
                     fill
+                    sizes="(max-width: 1024px) 58vw, 29vw"
                     className="object-cover"
                   />
                 </div>
@@ -180,7 +185,7 @@ export default function HeroHome() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-forest-800">Loueurs verifies</p>
+                  <p className="text-sm font-semibold text-forest-800">Loueurs vérifiés</p>
                   <p className="text-xs text-stone-500">Partenaire Yescapa</p>
                 </div>
               </div>

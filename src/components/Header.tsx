@@ -9,6 +9,8 @@ const navigation = [
   { name: 'Road Trip', href: '/road-trip-ecosse-van/' },
   { name: 'Prix', href: '/prix-location-van-ecosse/' },
   { name: 'Dormir en Van', href: '/dormir-en-van-ecosse/' },
+  { name: 'Édimbourg', href: '/location-van-ecosse-edimbourg/' },
+  { name: 'Glasgow', href: '/location-van-ecosse-glasgow/' },
   { name: '1 Semaine', href: '/ecosse-en-van-1-semaine/' },
   { name: '2 Semaines', href: '/ecosse-en-van-2-semaines/' },
   { name: 'FAQ', href: '/faq-location-van-ecosse/' },

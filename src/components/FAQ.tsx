@@ -12,7 +12,7 @@ interface FAQProps {
   title?: string;
 }
 
-export default function FAQ({ items, title = 'Questions frequentes' }: FAQProps) {
+export default function FAQ({ items, title = 'Questions fréquentes' }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   // Generate schema.org FAQPage
@@ -69,13 +69,11 @@ export default function FAQ({ items, title = 'Questions frequentes' }: FAQProps)
               </svg>
             </button>
 
-            {openIndex === index && (
-              <div className="p-5 pt-0 bg-white">
-                <p className="text-stone-600 leading-relaxed">
-                  {item.answer}
-                </p>
-              </div>
-            )}
+            <div className={`p-5 pt-0 bg-white ${openIndex === index ? '' : 'hidden'}`}>
+              <p className="text-stone-600 leading-relaxed">
+                {item.answer}
+              </p>
+            </div>
           </div>
         ))}
       </div>

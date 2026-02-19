@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 const footerNavigation = {
   destinations: [
-    { name: 'Location van Edimbourg', href: '/location-van-ecosse-edimbourg/' },
+    { name: 'Location van Édimbourg', href: '/location-van-ecosse-edimbourg/' },
     { name: 'Location van Glasgow', href: '/location-van-ecosse-glasgow/' },
     { name: 'Road trip Écosse', href: '/road-trip-ecosse-van/' },
   ],
   itineraires: [
-    { name: 'Ecosse en van 1 semaine', href: '/ecosse-en-van-1-semaine/' },
-    { name: 'Ecosse en van 2 semaines', href: '/ecosse-en-van-2-semaines/' },
+    { name: 'Écosse en van 1 semaine', href: '/ecosse-en-van-1-semaine/' },
+    { name: 'Écosse en van 2 semaines', href: '/ecosse-en-van-2-semaines/' },
     { name: 'Dormir en van', href: '/dormir-en-van-ecosse/' },
   ],
   pratique: [
@@ -41,7 +41,7 @@ export default function Footer() {
             </Link>
             <p className="mt-4 text-sm text-stone-300 leading-relaxed">
               Tout sur la location de van en Écosse.
-              Conseils, itineraires et bons plans pour un road trip inoubliable
+              Conseils, itinéraires et bons plans pour un road trip inoubliable
               dans les Highlands.
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Itineraires */}
           <div>
             <h3 className="text-sm font-semibold text-sand-400 uppercase tracking-wider">
-              Itineraires
+              Itinéraires
             </h3>
             <ul className="mt-4 space-y-3">
               {footerNavigation.itineraires.map((item) => (
@@ -121,16 +121,16 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-forest-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-stone-400">
-              &copy; {new Date().getFullYear()} ExploreScotlandVan.com - Tous droits reserves
+              &copy; {new Date().getFullYear()} ExploreScotlandVan.com - Tous droits réservés
             </p>
             <div className="flex items-center space-x-4 text-xs text-stone-500">
-              <Link href="/a-propos/" className="hover:text-white transition-colors">A propos</Link>
-              <Link href="/mentions-legales/" className="hover:text-white transition-colors">Mentions legales</Link>
-              <Link href="/politique-confidentialite/" className="hover:text-white transition-colors">Confidentialite</Link>
+              <Link href="/a-propos/" className="hover:text-white transition-colors">À propos</Link>
+              <Link href="/mentions-legales/" className="hover:text-white transition-colors">Mentions légales</Link>
+              <Link href="/politique-confidentialite/" className="hover:text-white transition-colors">Confidentialité</Link>
             </div>
           </div>
           <p className="text-xs text-stone-500 mt-4 text-center">
-            Ce site contient des liens affilies. En reservant via nos liens, vous soutenez notre travail sans frais supplementaires.
+            Ce site contient des liens affiliés. En réservant via nos liens, vous soutenez notre travail sans frais supplémentaires.
           </p>
         </div>
       </div>

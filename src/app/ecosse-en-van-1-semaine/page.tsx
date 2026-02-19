@@ -16,16 +16,16 @@ const breadcrumbItems = [
 
 const faqItems = [
   {
-    question: 'Est-ce suffisant de faire l\'Ecosse en 1 semaine ?',
-    answer: 'Une semaine permet de decouvrir les incontournables (Highlands centraux, Skye, Loch Ness) mais le rythme sera soutenu. Si possible, ajoutez 2-3 jours pour plus de flexibilite.',
+    question: 'Est-ce suffisant de faire l\'Écosse en 1 semaine ?',
+    answer: 'Une semaine permet de découvrir les incontournables (Highlands centraux, Skye, Loch Ness) mais le rythme sera soutenu. Si possible, ajoutez 2-3 jours pour plus de flexibilité.',
   },
   {
     question: 'Peut-on faire la North Coast 500 en 1 semaine ?',
-    answer: 'Techniquement oui, mais ce serait trop rapide pour en profiter. La NC500 seule merite 5-7 jours. Avec seulement une semaine, privilegiez l\'itineraire classique decrit ici.',
+    answer: 'Techniquement oui, mais ce serait trop rapide pour en profiter. La NC500 seule mérite 5-7 jours. Avec seulement une semaine, privilégiez l\'itinéraire classique décrit ici.',
   },
   {
-    question: 'Faut-il reserver les hebergements a l\'avance ?',
-    answer: 'En haute saison (juillet-aout), reservez les campings de Skye 2-3 semaines a l\'avance. Le reste de l\'annee, la flexibilite est possible.',
+    question: 'Faut-il réserver les hébergements à l\'avance ?',
+    answer: 'En haute saison (juillet-août), réservez les campings de Skye 2-3 semaines à l\'avance. Le reste de l\'année, la flexibilité est possible.',
   },
 ];
 
@@ -193,9 +193,12 @@ function DayCard({ day, isExpanded, onToggle }: DayCardProps) {
           </div>
         </button>
 
-        {/* Expanded content */}
-        {isExpanded && (
-          <div className="px-4 md:px-6 pb-6 border-t border-stone-100 pt-6">
+        {/* Expanded content - always in DOM for SEO, hidden visually */}
+        <div
+          className={`px-4 md:px-6 pb-6 border-t border-stone-100 pt-6 ${
+            isExpanded ? '' : 'hidden'
+          }`}
+        >
             <p className="text-stone-600 mb-4">{day.description}</p>
 
             {/* Highlights */}
@@ -227,8 +230,7 @@ function DayCard({ day, isExpanded, onToggle }: DayCardProps) {
                 </p>
               </div>
             )}
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );
@@ -250,10 +252,12 @@ export default function UneSemainePage() {
             '@context': 'https://schema.org',
             '@type': 'Article',
             headline: 'Écosse en Van 1 Semaine',
-            description: 'Itineraire detaille pour decouvrir l\'Écosse en van en une semaine.',
+            description: 'Itinéraire détaillé pour découvrir l\'Écosse en van en une semaine.',
             image: 'https://www.explorescotlandvan.com/images/roadtrip-panoramique.jpg',
-            author: { '@type': 'Organization', name: 'ExploreScotlandVan' },
-            publisher: { '@type': 'Organization', name: 'ExploreScotlandVan' },
+            datePublished: '2026-01-20',
+            dateModified: '2026-02-19',
+            author: { '@type': 'Organization', name: 'ExploreScotlandVan', url: 'https://www.explorescotlandvan.com/' },
+            publisher: { '@type': 'Organization', name: 'ExploreScotlandVan', logo: { '@type': 'ImageObject', url: 'https://www.explorescotlandvan.com/images/favicon.png' } },
           }),
         }}
       />
@@ -263,11 +267,11 @@ export default function UneSemainePage() {
         subtitle="L'itinéraire essentiel pour découvrir les Highlands"
         badge="7 jours"
         image="/images/roadtrip-panoramique.jpg"
-        imageAlt="Route panoramique en Ecosse pour un road trip d'une semaine"
+        imageAlt="Route panoramique en Écosse pour un road trip d'une semaine"
         stats={[
           { value: '7', label: 'Jours d\'aventure' },
-          { value: '800 km', label: 'A parcourir' },
-          { value: '5', label: 'Etapes cles' },
+          { value: '800 km', label: 'À parcourir' },
+          { value: '5', label: 'Étapes clés' },
           { value: '1500€', label: 'Budget moyen' },
         ]}
       />
@@ -281,9 +285,9 @@ export default function UneSemainePage() {
         <div className="prose-custom mb-12">
           <p className="text-xl text-stone-600">
             Une semaine en van en Écosse : c&apos;est court mais suffisant pour tomber amoureux
-            du pays. Cet itineraire optimise vous fait decouvrir les incontournables des Highlands
-            sans vous epuiser. Au programme : paysages grandioses, lochs mysterieux et villages
-            de caractere.
+            du pays. Cet itinéraire optimisé vous fait découvrir les incontournables des Highlands
+            sans vous épuiser. Au programme : paysages grandioses, lochs mystérieux et villages
+            de caractère.
           </p>
         </div>
 

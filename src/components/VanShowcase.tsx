@@ -10,7 +10,7 @@ const vans = [
     beds: 2,
     seats: 3,
     image: '/images/van-scandi.jpg',
-    features: ['Chauffage diesel', 'Panneau solaire', 'Cuisine equipee'],
+    features: ['Chauffage diesel', 'Panneau solaire', 'Cuisine équipée'],
   },
   {
     name: 'Dolly',
@@ -20,7 +20,7 @@ const vans = [
     beds: 4,
     seats: 5,
     image: '/images/van-dolly.webp',
-    features: ['Toit ouvrant', 'Chauffage diesel', 'Refrigerateur'],
+    features: ['Toit ouvrant', 'Chauffage diesel', 'Réfrigérateur'],
   },
   {
     name: 'Luna',
@@ -30,7 +30,7 @@ const vans = [
     beds: 4,
     seats: 4,
     image: '/images/van-luna.jpg',
-    features: ['4x4 automatique', 'Toit relevable', 'Cuisine integree'],
+    features: ['4x4 automatique', 'Toit relevable', 'Cuisine intégrée'],
   },
 ];
 
@@ -43,7 +43,7 @@ export default function VanShowcase() {
             Exemples de vans disponibles
           </h2>
           <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-            Decouvrez quelques vans proposes par des proprietaires en Écosse
+            Découvrez quelques vans proposés par des propriétaires en Écosse
           </p>
         </div>
 
@@ -58,6 +58,7 @@ export default function VanShowcase() {
                   src={van.image}
                   alt={`${van.name} - ${van.model}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
