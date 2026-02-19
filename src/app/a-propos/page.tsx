@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/a-propos/',
   },
+  openGraph: {
+    title: 'À Propos | ExploreScotlandVan',
+    description: 'Découvrez ExploreScotlandVan.com, votre ressource pour la location de van et le road trip en Écosse.',
+    url: 'https://www.explorescotlandvan.com/a-propos/',
+  },
+  twitter: {
+    title: 'À Propos | ExploreScotlandVan',
+    description: 'Découvrez ExploreScotlandVan.com, votre ressource pour la location de van et le road trip en Écosse.',
+  },
 };
 
 const breadcrumbItems = [
@@ -25,6 +34,7 @@ export default function AProposPage() {
           alt="Van face à la nature écossaise"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-900/40 to-transparent" />
@@ -98,7 +108,7 @@ export default function AProposPage() {
 
           <p>
             L&apos;Écosse est l&apos;une des destinations les plus adaptées au voyage en van en
-            Europe. Ses paysages grandioses, sa legislation favorable au camping sauvage
+            Europe. Ses paysages grandioses, sa législation favorable au camping sauvage
             (le fameux Right to Roam) et ses routes panoramiques en font un terrain de jeu
             idéal pour les aventuriers.
           </p>

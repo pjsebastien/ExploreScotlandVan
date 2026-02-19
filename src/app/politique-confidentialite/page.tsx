@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/politique-confidentialite/',
   },
+  openGraph: {
+    title: 'Politique de Confidentialité | ExploreScotlandVan',
+    description: 'Politique de confidentialité et protection des données personnelles du site ExploreScotlandVan.com',
+    url: 'https://www.explorescotlandvan.com/politique-confidentialite/',
+  },
+  twitter: {
+    title: 'Politique de Confidentialité | ExploreScotlandVan',
+    description: 'Politique de confidentialité et protection des données personnelles du site ExploreScotlandVan.com',
+  },
 };
 
 const breadcrumbItems = [
@@ -111,8 +120,8 @@ export default function PolitiqueConfidentialitePage() {
           <ul>
             <li>Droit d&apos;accès à vos données</li>
             <li>Droit de rectification</li>
-            <li>Droit a l&apos;effacement</li>
-            <li>Droit a la limitation du traitement</li>
+            <li>Droit à l&apos;effacement</li>
+            <li>Droit à la limitation du traitement</li>
             <li>Droit d&apos;opposition</li>
             <li>Droit à la portabilité</li>
           </ul>

@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     url: 'https://www.explorescotlandvan.com/ecosse-en-van-2-semaines/',
     images: [{ url: '/images/north-coast-500.jpg' }],
   },
+  twitter: {
+    title: 'Écosse en van 2 semaines : le grand tour avec la NC500',
+    description: 'Explorez l\'Écosse en van pendant 14 jours : North Coast 500, Skye, Highlands.',
+    images: ['/images/north-coast-500.jpg'],
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

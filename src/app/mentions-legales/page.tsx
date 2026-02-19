@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.explorescotlandvan.com/mentions-legales/',
   },
+  openGraph: {
+    title: 'Mentions Légales | ExploreScotlandVan',
+    description: 'Mentions légales du site ExploreScotlandVan.com',
+    url: 'https://www.explorescotlandvan.com/mentions-legales/',
+  },
+  twitter: {
+    title: 'Mentions Légales | ExploreScotlandVan',
+    description: 'Mentions légales du site ExploreScotlandVan.com',
+  },
 };
 
 const breadcrumbItems = [
@@ -56,9 +65,9 @@ export default function MentionsLegalesPage() {
 
           <h2>Propriété intellectuelle</h2>
           <p>
-            L&apos;ensemble du contenu de ce site (textes, images, graphismes, logo, icones, etc.)
+            L&apos;ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, etc.)
             est la propriété exclusive de l&apos;éditeur, sauf mention contraire. Toute reproduction,
-            distribution, modification, adaptation, retransmission ou publication de ces elements
+            distribution, modification, adaptation, retransmission ou publication de ces éléments
             est strictement interdite sans l&apos;accord écrit de l&apos;éditeur.
           </p>
 

@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     description: 'Réponses à toutes vos questions sur la location de van en Écosse : permis, assurance, bivouac et plus.',
     url: 'https://www.explorescotlandvan.com/faq-location-van-ecosse/',
   },
+  twitter: {
+    title: 'FAQ Location Van Écosse - Toutes vos Questions',
+    description: 'Réponses à toutes vos questions sur la location de van en Écosse : permis, assurance, bivouac et plus.',
+  },
 };
 
 const breadcrumbItems = [
@@ -179,11 +183,11 @@ export default function FAQPage() {
         </nav>
 
         <section id="general" className="mb-16">
-          <FAQ items={faqGeneral} title="Questions générales" />
+          <FAQ items={faqGeneral} title="Questions générales" showSchema={false} />
         </section>
 
         <section id="bivouac" className="mb-16">
-          <FAQ items={faqBivouac} title="Bivouac et hébergement" />
+          <FAQ items={faqBivouac} title="Bivouac et hébergement" showSchema={false} />
           <div className="mt-6">
             <Link
               href="/dormir-en-van-ecosse/"
@@ -197,7 +201,7 @@ export default function FAQPage() {
         <AffiliateCTA variant="compact" />
 
         <section id="pratique" className="mb-16">
-          <FAQ items={faqPratique} title="Conseils pratiques" />
+          <FAQ items={faqPratique} title="Conseils pratiques" showSchema={false} />
           <div className="mt-6">
             <Link
               href="/road-trip-ecosse-van/"
@@ -209,7 +213,7 @@ export default function FAQPage() {
         </section>
 
         <section id="budget" className="mb-16">
-          <FAQ items={faqBudget} title="Budget et prix" />
+          <FAQ items={faqBudget} title="Budget et prix" showSchema={false} />
           <div className="mt-6">
             <Link
               href="/prix-location-van-ecosse/"
@@ -221,7 +225,7 @@ export default function FAQPage() {
         </section>
 
         <section id="equipement" className="mb-16">
-          <FAQ items={faqEquipement} title="Équipement du van" />
+          <FAQ items={faqEquipement} title="Équipement du van" showSchema={false} />
         </section>
 
         <div className="prose-custom">

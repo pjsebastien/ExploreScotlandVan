@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     url: 'https://www.explorescotlandvan.com/ecosse-en-van-1-semaine/',
     images: [{ url: '/images/roadtrip-panoramique.jpg' }],
   },
+  twitter: {
+    title: 'Écosse en van 1 semaine : l\'itinéraire essentiel',
+    description: 'Découvrez l\'Écosse en van en 7 jours : Édimbourg, Skye, Glen Coe. Itinéraire jour par jour.',
+    images: ['/images/roadtrip-panoramique.jpg'],
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

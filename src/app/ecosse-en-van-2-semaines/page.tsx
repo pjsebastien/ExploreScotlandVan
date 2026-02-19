@@ -264,12 +264,13 @@ function DayCard({ day, isExpanded, onToggle }: DayCardProps) {
           </div>
         </button>
 
-        {/* Expanded content - always in DOM for SEO, hidden visually */}
+        {/* Expanded content - always in DOM for SEO, collapsed visually */}
         <div
-          className={`px-4 md:px-6 pb-6 border-t border-stone-100 pt-6 ${
-            isExpanded ? '' : 'hidden'
+          className={`overflow-hidden transition-all duration-300 ${
+            isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
+          <div className="px-4 md:px-6 pb-6 border-t border-stone-100 pt-6">
             <p className="text-stone-600 mb-4">{day.description}</p>
 
             {/* Highlights */}
@@ -302,6 +303,7 @@ function DayCard({ day, isExpanded, onToggle }: DayCardProps) {
               </div>
             )}
           </div>
+        </div>
         </div>
       </div>
   );

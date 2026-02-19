@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     url: 'https://www.explorescotlandvan.com/dormir-en-van-ecosse/',
     images: [{ url: '/images/dormir-van-lac.jpg' }],
   },
+  twitter: {
+    title: 'Dormir en van en Écosse : bivouac, spots et règles',
+    description: 'Bivouac, camping sauvage : tout savoir pour dormir en van en Écosse.',
+    images: ['/images/dormir-van-lac.jpg'],
+  },
 };
 
 const breadcrumbItems = [
@@ -138,7 +143,7 @@ export default function DormirEnVanPage() {
             réglementations spécifiques pour les véhicules :
           </p>
 
-          <h3>Zones a restrictions</h3>
+          <h3>Zones à restrictions</h3>
 
           <ul>
             <li>
@@ -146,7 +151,7 @@ export default function DormirEnVanPage() {
               dans certaines zones de mars à septembre. Utilisez les aires désignées.
             </li>
             <li>
-              <strong>Ile de Skye :</strong> Certains parkings interdisent le camping nocturne.
+              <strong>Île de Skye :</strong> Certains parkings interdisent le camping nocturne.
               La pression touristique a entraîné des restrictions locales.
             </li>
             <li>
@@ -200,7 +205,7 @@ export default function DormirEnVanPage() {
           </ul>
 
           <p>
-            <strong>Prix :</strong> 5 a 15€ par nuit en moyenne. Certaines sont gratuites
+            <strong>Prix :</strong> 5 à 15€ par nuit en moyenne. Certaines sont gratuites
             mais sans services.
           </p>
 
@@ -219,7 +224,7 @@ export default function DormirEnVanPage() {
           </ul>
 
           <p>
-            <strong>Prix :</strong> 20 a 35€ par nuit selon les services et la saison.
+            <strong>Prix :</strong> 20 à 35€ par nuit selon les services et la saison.
             Réservation recommandée en juillet-août, surtout sur Skye et la NC500.
           </p>
 
@@ -322,7 +327,7 @@ export default function DormirEnVanPage() {
             locales ponctuelles en haute saison.
           </p>
 
-          <h3>Ile de Skye</h3>
+          <h3>Île de Skye</h3>
           <p>
             Les spots se raréfient à cause de la surfréquentation. Privilégiez les campings
             ou les aires officielles. Les parkings populaires (Fairy Pools, Old Man of Storr)

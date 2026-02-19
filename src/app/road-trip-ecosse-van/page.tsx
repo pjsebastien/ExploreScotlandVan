@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     url: 'https://www.explorescotlandvan.com/road-trip-ecosse-van/',
     images: [{ url: '/images/route-highlands.jpg' }],
   },
+  twitter: {
+    title: 'Road trip Écosse en van : planifiez votre aventure',
+    description: 'Planifiez votre road trip en van en Écosse. Découvrez nos itinéraires et conseils pour les Highlands.',
+    images: ['/images/route-highlands.jpg'],
+  },
 };
 
 const breadcrumbItems = [

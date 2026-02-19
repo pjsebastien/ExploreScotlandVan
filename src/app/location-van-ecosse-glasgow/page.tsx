@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     url: 'https://www.explorescotlandvan.com/location-van-ecosse-glasgow/',
     images: [{ url: '/images/roadtrip-mer-montagne.jpg' }],
   },
+  twitter: {
+    title: 'Location van Glasgow : direction la côte ouest',
+    description: 'Louez un van à Glasgow et rejoignez Skye et les Highlands en 1h.',
+    images: ['/images/roadtrip-mer-montagne.jpg'],
+  },
 };
 
 const breadcrumbItems = [
@@ -151,8 +156,8 @@ export default function GlasgowPage() {
             Un itinéraire plus ambitieux incluant :
           </p>
           <ul>
-            <li>Ile de Mull (ferry depuis Oban)</li>
-            <li>Ile de Skye</li>
+            <li>Île de Mull (ferry depuis Oban)</li>
+            <li>Île de Skye</li>
             <li>Harris et Lewis (ferry depuis Uig, Skye)</li>
             <li>Retour par la côte Nord et les Cairngorms</li>
           </ul>
@@ -244,7 +249,7 @@ export default function GlasgowPage() {
 
           <p>
             Glasgow a une personnalité différente d&apos;Édimbourg : plus industrielle, plus
-            authentique, avec une scene culturelle dynamique. C&apos;est une excellente introduction
+            authentique, avec une scène culturelle dynamique. C&apos;est une excellente introduction
             à l&apos;Écosse moderne avant de plonger dans les paysages ancestraux des Highlands.
           </p>
         </div>

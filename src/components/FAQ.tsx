@@ -10,9 +10,10 @@ export interface FAQItem {
 interface FAQProps {
   items: FAQItem[];
   title?: string;
+  showSchema?: boolean;
 }
 
-export default function FAQ({ items, title = 'Questions fréquentes' }: FAQProps) {
+export default function FAQ({ items, title = 'Questions fréquentes', showSchema = true }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   // Generate schema.org FAQPage
@@ -31,10 +32,12 @@ export default function FAQ({ items, title = 'Questions fréquentes' }: FAQProps
 
   return (
     <section className="py-12">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      {showSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      )}
 
       {title && (
         <h2 className="text-2xl md:text-3xl font-bold text-forest-800 mb-8 text-center">

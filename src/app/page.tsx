@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     description: 'Trouvez votre van aménagé en Écosse parmi les meilleures offres. Comparez, réservez et explorez les Highlands en toute liberté.',
     url: 'https://www.explorescotlandvan.com/',
   },
+  twitter: {
+    title: 'Location van aménagé Écosse dès 60€/jour : comparez les offres',
+    description: 'Trouvez votre van aménagé en Écosse parmi les meilleures offres. Comparez, réservez et explorez les Highlands en toute liberté.',
+  },
 };
 
 const breadcrumbItems = [
@@ -436,6 +440,7 @@ export default function HomePage() {
                 src="/images/route-highlands.jpg"
                 alt="Route panoramique des Highlands"
                 fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -458,6 +463,7 @@ export default function HomePage() {
                 src="/images/van-montagnes.jpg"
                 alt="Van aménagé dans les montagnes écossaises"
                 fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -480,6 +486,7 @@ export default function HomePage() {
                 src="/images/sunset-van-ecosse.jpg"
                 alt="Coucher de soleil sur un van en Écosse"
                 fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>

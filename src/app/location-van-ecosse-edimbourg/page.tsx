@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     url: 'https://www.explorescotlandvan.com/location-van-ecosse-edimbourg/',
     images: [{ url: '/images/van-nature.jpg' }],
   },
+  twitter: {
+    title: 'Location van Édimbourg : départ idéal pour les Highlands',
+    description: 'Louez un van aménagé à Édimbourg. Récupération aéroport et meilleurs loueurs.',
+    images: ['/images/van-nature.jpg'],
+  },
 };
 
 const breadcrumbItems = [
@@ -154,7 +159,7 @@ export default function EdimbourgPage() {
           <ul>
             <li>Édimbourg → Stirling → Loch Lomond (1h30)</li>
             <li>Loch Lomond → Glen Coe → Fort William (2h)</li>
-            <li>Fort William → Ile de Skye (2h30)</li>
+            <li>Fort William → Île de Skye (2h30)</li>
             <li>Skye → Loch Ness → Inverness (3h)</li>
             <li>Inverness → Cairngorms → Édimbourg (3h30)</li>
           </ul>

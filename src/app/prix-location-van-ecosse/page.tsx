@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     url: 'https://www.explorescotlandvan.com/prix-location-van-ecosse/',
     images: [{ url: '/images/van-montagnes.jpg' }],
   },
+  twitter: {
+    title: 'Prix location van Écosse : tarifs et budget détaillé',
+    description: 'Découvrez les vrais prix de location de van en Écosse : tarifs journaliers et budget total.',
+    images: ['/images/van-montagnes.jpg'],
+  },
 };
 
 const breadcrumbItems = [
@@ -36,7 +41,7 @@ const faqItems = [
     answer: 'La plupart des loueurs demandent une caution, généralement entre 500€ et 1500€ selon le type de van. Elle est bloquée sur votre carte bancaire et restituée après l\'état des lieux retour.',
   },
   {
-    question: 'Le kilometrage est-il illimite ?',
+    question: 'Le kilométrage est-il illimité ?',
     answer: 'La majorité des offres incluent un kilométrage illimité, mais vérifiez toujours les conditions. Certains loueurs appliquent des restrictions ou des frais pour les kilomètres supplémentaires.',
   },
   {
