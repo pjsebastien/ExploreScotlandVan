@@ -3,8 +3,19 @@ import { getPublishedArticles } from '@/lib/blog';
 
 export const dynamic = 'force-dynamic';
 
+const cityPages = [
+  { url: '/location-van-ecosse-edimbourg/', lastModified: '2026-02-19', publishDate: null },
+  { url: '/location-van-ecosse-glasgow/', lastModified: '2026-02-19', publishDate: null },
+  { url: '/location-van-ecosse-inverness/', lastModified: '2026-03-23', publishDate: '2026-03-23T08:00:00.000Z' },
+  { url: '/location-van-ecosse-fort-william/', lastModified: '2026-03-29', publishDate: '2026-03-29T08:00:00.000Z' },
+  { url: '/location-van-ecosse-aberdeen/', lastModified: '2026-04-04', publishDate: '2026-04-04T08:00:00.000Z' },
+  { url: '/location-van-ecosse-oban/', lastModified: '2026-04-10', publishDate: '2026-04-10T08:00:00.000Z' },
+  { url: '/location-van-ecosse-stirling/', lastModified: '2026-04-16', publishDate: '2026-04-16T08:00:00.000Z' },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.explorescotlandvan.com';
+  const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -44,48 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/location-van-ecosse-edimbourg/`,
-      lastModified: '2026-02-19',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/location-van-ecosse-glasgow/`,
-      lastModified: '2026-02-19',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/location-van-ecosse-inverness/`,
-      lastModified: '2026-03-23',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/location-van-ecosse-fort-william/`,
-      lastModified: '2026-03-29',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/location-van-ecosse-aberdeen/`,
-      lastModified: '2026-04-04',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/location-van-ecosse-oban/`,
-      lastModified: '2026-04-10',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/location-van-ecosse-stirling/`,
-      lastModified: '2026-04-16',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/faq-location-van-ecosse/`,
       lastModified: '2026-02-19',
       changeFrequency: 'monthly',
@@ -105,6 +74,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const cityRoutes: MetadataRoute.Sitemap = cityPages
+    .filter((city) => !city.publishDate || new Date(city.publishDate) <= now)
+    .map((city) => ({
+      url: `${baseUrl}${city.url}`,
+      lastModified: city.lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }));
+
   const articles = getPublishedArticles();
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${baseUrl}/blog/${article.slug}/`,
@@ -113,5 +91,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...articleRoutes];
+  return [...staticRoutes, ...cityRoutes, ...articleRoutes];
 }

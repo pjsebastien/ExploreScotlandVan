@@ -2,23 +2,56 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const navigation = [
   { name: 'Accueil', href: '/' },
   { name: 'Road Trip', href: '/road-trip-ecosse-van/' },
   { name: 'Prix', href: '/prix-location-van-ecosse/' },
   { name: 'Dormir en Van', href: '/dormir-en-van-ecosse/' },
-  { name: 'Édimbourg', href: '/location-van-ecosse-edimbourg/' },
-  { name: 'Glasgow', href: '/location-van-ecosse-glasgow/' },
   { name: '1 Semaine', href: '/ecosse-en-van-1-semaine/' },
   { name: '2 Semaines', href: '/ecosse-en-van-2-semaines/' },
   { name: 'FAQ', href: '/faq-location-van-ecosse/' },
   { name: 'Blog', href: '/blog/' },
 ];
 
+const cityPages = [
+  { name: 'Édimbourg', href: '/location-van-ecosse-edimbourg/', publishDate: null },
+  { name: 'Glasgow', href: '/location-van-ecosse-glasgow/', publishDate: null },
+  { name: 'Inverness', href: '/location-van-ecosse-inverness/', publishDate: '2026-03-23T08:00:00.000Z' },
+  { name: 'Fort William', href: '/location-van-ecosse-fort-william/', publishDate: '2026-03-29T08:00:00.000Z' },
+  { name: 'Aberdeen', href: '/location-van-ecosse-aberdeen/', publishDate: '2026-04-04T08:00:00.000Z' },
+  { name: 'Oban', href: '/location-van-ecosse-oban/', publishDate: '2026-04-10T08:00:00.000Z' },
+  { name: 'Stirling', href: '/location-van-ecosse-stirling/', publishDate: '2026-04-16T08:00:00.000Z' },
+];
+
+function getVisibleCities() {
+  const now = new Date();
+  return cityPages.filter(
+    (city) => !city.publishDate || new Date(city.publishDate) <= now
+  );
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [citiesOpen, setCitiesOpen] = useState(false);
+  const [mobileCitiesOpen, setMobileCitiesOpen] = useState(false);
+  const [visibleCities, setVisibleCities] = useState(getVisibleCities);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setVisibleCities(getVisibleCities());
+  }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setCitiesOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-200">
@@ -50,6 +83,46 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+
+            {/* Cities dropdown */}
+            {visibleCities.length > 0 && (
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  type="button"
+                  className="flex items-center text-sm font-medium text-stone-700 hover:text-forest-700 transition-colors"
+                  onClick={() => setCitiesOpen(!citiesOpen)}
+                  aria-expanded={citiesOpen}
+                  aria-haspopup="true"
+                >
+                  Villes
+                  <svg
+                    className={`ml-1 h-4 w-4 transition-transform ${citiesOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+
+                {citiesOpen && (
+                  <div className="absolute right-0 mt-2 w-56 rounded-lg bg-white shadow-lg ring-1 ring-stone-200 py-2 z-50">
+                    {visibleCities.map((city) => (
+                      <Link
+                        key={city.name}
+                        href={city.href}
+                        className="block px-4 py-2 text-sm text-stone-700 hover:bg-forest-50 hover:text-forest-700 transition-colors"
+                        onClick={() => setCitiesOpen(false)}
+                      >
+                        {city.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             <Link
               href="https://www.yescapa.fr/s?radius=417129.09846972214&latitude=55.95438&longitude=-3.20145&where=Royaume-Uni%2C+Scotland&beds=2&seatbelts=2&page=1&ae=620&aev=vanecosse"
               target="_blank"
@@ -97,6 +170,44 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+
+              {/* Mobile cities submenu */}
+              {visibleCities.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    className="flex items-center justify-between w-full rounded-lg px-3 py-2 text-base font-medium text-stone-700 hover:bg-stone-50 hover:text-forest-700"
+                    onClick={() => setMobileCitiesOpen(!mobileCitiesOpen)}
+                    aria-expanded={mobileCitiesOpen}
+                  >
+                    Villes
+                    <svg
+                      className={`h-5 w-5 transition-transform ${mobileCitiesOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </button>
+                  {mobileCitiesOpen && (
+                    <div className="pl-4 space-y-1">
+                      {visibleCities.map((city) => (
+                        <Link
+                          key={city.name}
+                          href={city.href}
+                          className="block rounded-lg px-3 py-2 text-sm text-stone-600 hover:bg-stone-50 hover:text-forest-700"
+                          onClick={() => { setMobileMenuOpen(false); setMobileCitiesOpen(false); }}
+                        >
+                          {city.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+
               <Link
                 href="https://www.yescapa.fr/s?radius=417129.09846972214&latitude=55.95438&longitude=-3.20145&where=Royaume-Uni%2C+Scotland&beds=2&seatbelts=2&page=1&ae=620&aev=vanecosse"
                 target="_blank"

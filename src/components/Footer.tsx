@@ -1,17 +1,28 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+const cityPages = [
+  { name: 'Location van Édimbourg', href: '/location-van-ecosse-edimbourg/', publishDate: null },
+  { name: 'Location van Glasgow', href: '/location-van-ecosse-glasgow/', publishDate: null },
+  { name: 'Location van Inverness', href: '/location-van-ecosse-inverness/', publishDate: '2026-03-23T08:00:00.000Z' },
+  { name: 'Location van Fort William', href: '/location-van-ecosse-fort-william/', publishDate: '2026-03-29T08:00:00.000Z' },
+  { name: 'Location van Aberdeen', href: '/location-van-ecosse-aberdeen/', publishDate: '2026-04-04T08:00:00.000Z' },
+  { name: 'Location van Oban', href: '/location-van-ecosse-oban/', publishDate: '2026-04-10T08:00:00.000Z' },
+  { name: 'Location van Stirling', href: '/location-van-ecosse-stirling/', publishDate: '2026-04-16T08:00:00.000Z' },
+];
+
+function getVisibleDestinations() {
+  const now = new Date();
+  const cities = cityPages.filter(
+    (city) => !city.publishDate || new Date(city.publishDate) <= now
+  );
+  return [
+    ...cities,
+    { name: 'Road trip Écosse', href: '/road-trip-ecosse-van/', publishDate: null },
+  ];
+}
+
 const footerNavigation = {
-  destinations: [
-    { name: 'Location van Édimbourg', href: '/location-van-ecosse-edimbourg/' },
-    { name: 'Location van Glasgow', href: '/location-van-ecosse-glasgow/' },
-    { name: 'Location van Inverness', href: '/location-van-ecosse-inverness/' },
-    { name: 'Location van Fort William', href: '/location-van-ecosse-fort-william/' },
-    { name: 'Location van Aberdeen', href: '/location-van-ecosse-aberdeen/' },
-    { name: 'Location van Oban', href: '/location-van-ecosse-oban/' },
-    { name: 'Location van Stirling', href: '/location-van-ecosse-stirling/' },
-    { name: 'Road trip Écosse', href: '/road-trip-ecosse-van/' },
-  ],
   itineraires: [
     { name: 'Écosse en van 1 semaine', href: '/ecosse-en-van-1-semaine/' },
     { name: 'Écosse en van 2 semaines', href: '/ecosse-en-van-2-semaines/' },
@@ -57,7 +68,7 @@ export default function Footer() {
               Destinations
             </h3>
             <ul className="mt-4 space-y-3">
-              {footerNavigation.destinations.map((item) => (
+              {getVisibleDestinations().map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
