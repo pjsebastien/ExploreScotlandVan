@@ -14,6 +14,7 @@ const navigation = [
   { name: '1 Semaine', href: '/ecosse-en-van-1-semaine/' },
   { name: '2 Semaines', href: '/ecosse-en-van-2-semaines/' },
   { name: 'FAQ', href: '/faq-location-van-ecosse/' },
+  { name: 'Blog', href: '/blog/' },
 ];
 
 export default function Header() {

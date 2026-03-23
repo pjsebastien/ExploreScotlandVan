@@ -5,6 +5,11 @@ const footerNavigation = {
   destinations: [
     { name: 'Location van Édimbourg', href: '/location-van-ecosse-edimbourg/' },
     { name: 'Location van Glasgow', href: '/location-van-ecosse-glasgow/' },
+    { name: 'Location van Inverness', href: '/location-van-ecosse-inverness/' },
+    { name: 'Location van Fort William', href: '/location-van-ecosse-fort-william/' },
+    { name: 'Location van Aberdeen', href: '/location-van-ecosse-aberdeen/' },
+    { name: 'Location van Oban', href: '/location-van-ecosse-oban/' },
+    { name: 'Location van Stirling', href: '/location-van-ecosse-stirling/' },
     { name: 'Road trip Écosse', href: '/road-trip-ecosse-van/' },
   ],
   itineraires: [
